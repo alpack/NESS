@@ -1,1 +1,7 @@
 Pedro;5
+Leo;3
+Reiso;3
+Pedro ;5
+Caio ;4
+Pedro;5
+Pedro;3

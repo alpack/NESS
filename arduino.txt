@@ -1,1 +1,8 @@
 Pedro;4
+Leo;4
+Reiso;4
+Pedro ;5
+Caio ;2
+Oi eu sou Pedro,  tudo bom 
+Pedro;4
+Pedro;5
