@@ -23,21 +23,20 @@ int main(void)
     int quantidade; // Armazenara a quantidade de conhecimento do usuario
     char nome[24];  // Váriavel para armazenar o nome dos usuarios
     char descricao[1023];
+    printf("passei das declarações de variaveis\n"); 
 
     // programa vai tentar procurar os arquivos, se não existir irá criar novos
     arduino = fopen("arduino.txt", "a");
     ps = fopen("photoshop.txt", "a");
     mod3d = fopen("modelagem.txt", "a");
+    printf("passei dos arquivos\n");
 
     // input de dados
     printf("Digite o seu nome: ");
-    strcat("%s", nome);
+    scanf("%s", nome);
     printf("Digite uma descricao: ");
-    strcat("%s", descricao);
-
-    strncpy(nome, *ficha->nome, 24);
-    strncpy(descricao, *ficha->descricao, 1023);
-
+    scanf("%s", descricao);
+    
     // input arduino
     printf("Voce sabe arduino?(digite 1 para sim ou 0 para nao): ");
     scanf("%d", &check);
