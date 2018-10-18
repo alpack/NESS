@@ -31,12 +31,15 @@ int main(void){
     // Search for string, line-by-line
     while (fgets(content, BUFFER_SIZE, fp) != NULL){
         if (strstr(content, word)){
-            printf("A match found on line: %d\n", line);
+            printf("Palavra encontrada na linha: %d\n", line);
             printf("%s\n", content);
             results++;
         }
         line++;
     }
+    // Inform user no matches were found
+    if (!results)
+        printf("Arquivo não contém a palavra: %s\n", word);
     // Free memory and close file
     free(content);
     free(word);
