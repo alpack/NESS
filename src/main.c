@@ -6,7 +6,7 @@
  */
 
 #include <stdio.h>
-#include "../include/authMenu.h"
+#include "../include/authentication.h"
 
 int main(void){
     /* opens menu w/ signup, login, or leave options */

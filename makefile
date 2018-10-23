@@ -20,10 +20,11 @@ TARGET	= NESS
 CFLAGS	= -Wall -I$(INC)
 LFLAGS	= -lm
 REMOVE	:= rm -rf
+MKDIR	:= mkdir -p
 
 # Linking
 $(BIN)$(TARGET): $(OBJECTS) $(CMN_OBJ)
-	mkdir -p $(BIN)
+	$(MKDIR) $(BIN)
 	$(CC) $(LFLAGS) -o $@ $(OBJECTS) $(CMN_OBJ)
 	@echo "Linking complete"
 
@@ -31,11 +32,17 @@ $(BIN)$(TARGET): $(OBJECTS) $(CMN_OBJ)
 
 # Compilation
 $(OBJECTS): $(OBJ)%.o : $(SRC)%.c
-	mkdir -p $(OBJ)
-	mkdir -p $(DEP)
+	$(MKDIR) $(OBJ)
+	$(MKDIR) $(DEP)
 	$(CC) -c $(CFLAGS) $< -o $@
 	$(CC) -I$(INC) -MM -MT '$(OBJ)$*.o' $(SRC)$*.c > $(DEP)$*.d
 	@echo "Compiled $<"
+
+# $(MKDIR)	database/auth
+# 	echo "usuario.txt created" >> usuario.txt
+
+# $(MKDIR)	database/habilidades
+# 	echo "lista.txt created" >> lista.txt
 
 # Make commands
 .PHONY: clean

@@ -4,8 +4,8 @@
  * 
  */
 
-#ifndef SIGNUP_H
-    #define SIGNUP_H
+#ifndef AUTHENTICATION_H
+    #define AUTHENTICATION_H
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -13,6 +13,8 @@
     #define MAX_CHAR 50
     #define BUFFER_SIZE 1024
 
+    void authMenu(void);
     int signup(void);
+    int login(void);
 
     #endif
