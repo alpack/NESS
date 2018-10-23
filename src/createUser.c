@@ -47,7 +47,7 @@ int createUser(void){
         else
             break;
     }
-    printf("\n2Parabéns, teu cadastro está completo! Agora só falta por a mão na massa!");
+    printf("\nParabéns, teu cadastro está completo! Agora só falta por a mão na massa!\n");
     /***************** OPTION 2: USER MAY INPUT ANY SKILL *****************/
     char choice;
     printf("\nQuer compartilhar alguma habilidade no seu perfil? (s/n)");
@@ -70,6 +70,6 @@ int createUser(void){
         scanf("%c", &choice);
     }
     /*************************************************************************/
-    printf("\nParabéns, teu cadastro está completo! Agora só falta por a mão na massa!");
+    printf("\nParabéns, teu cadastro está completo! Agora só falta por a mão na massa!\n");
     return 0;
 }
