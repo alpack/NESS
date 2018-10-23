@@ -1,35 +1,30 @@
----
-name: Bug report
-about: Create a report to help us improve
+# <branch-type>/<branch-name>: {issue tittle}
 
----
+Please answer the following questions for yourself before submitting an issue.
+- [ ] I am running the latest version of the project
+- [ ] I checked the documentation and found no answer
+- [ ] I checked to make sure that this issue has not already been filed
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## Expected Behavior
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+Please describe the behavior you were expecting
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+## Current Behavior
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+What is the current behavior?
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+## Failure Information (for bugs)
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+Please help provide information about the failure if this is a bug. If it is not a bug, please remove the rest of this template.
 
-**Additional context**
-Add any other context about the problem here.
+## Context
+
+Please provide any relevant information about how you ran into the issue, or what you think might've led to it.
+
+1. step 1
+2. step 2
+3. step 3
+
+## Failure Logs
+
+Please include any relevant log snippets or files here.
