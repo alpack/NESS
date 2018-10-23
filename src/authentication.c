@@ -77,7 +77,7 @@ int signup(void){
     char *password = (char *)malloc(MAX_CHAR * sizeof(char *));
     printf("Senha: ");
     scanf("%s", password);
-    fprintf(fp, "%s,%s", login, password);
+    fprintf(fp, "%s,%s\n", login, password);
     /* free allocated memory */
     free(lineContent);
     free(login);
