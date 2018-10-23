@@ -1,4 +1,4 @@
-# <branch-type>/<branch-name>: {issue tittle}
+# branch-type/branch-name: {issue tittle}
 
 Please answer the following questions for yourself before submitting an issue.
 - [ ] I am running the latest version of the project
