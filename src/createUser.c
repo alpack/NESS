@@ -65,8 +65,9 @@ int createUser(void){
         /* concatenate user skill with .txt extension */
         char *path = "../database/habilidades/", *extension = ".txt";
         char file[strlen(skill) + strlen(extension) + strlen(path) +1];
+        /* Open `fp` file in the database w/ append permission */
         snprintf(file, sizeof(file), "%s%s%s", path, skill, extension);
-        FILE *fp = fopen(file, "a+");
+        FILE *fp = fopen(file, "a");
         fprintf(fp, "%s,%d\n", name, aptitude);
         printf("\nQuer adicionar outra habilidade ao seu perfil? (s/n)");
         scanf("%c", &choice);
@@ -75,5 +76,3 @@ int createUser(void){
     printf("\nParabéns, teu cadastro está completo! Agora só falta por a mão na massa!");
     return 0;
 }
-
-/* Open `skills` file in the database w/ read-only permission */
