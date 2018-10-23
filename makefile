@@ -17,8 +17,8 @@ BIN	= bin/
 ## COMPILER AND WARNINGS
 CC	= gcc
 TARGET	= NESS
-CFLAGS	= -Wall -Wextra -pedantic -g -O0 -I$(INC)
-LFLAGS	= 
+CFLAGS	= -Wall -I$(INC)
+LFLAGS	= -lm
 REMOVE	:= rm -rf
 
 # Linking
