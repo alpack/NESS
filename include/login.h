@@ -4,14 +4,14 @@
  * 
  */
 
-#ifndef SIGNUP_H
-    #define SIGNUP_H
+#ifndef LOGIN_H
+    #define LOGIN_H
 
     #include <stdio.h>
     #include <stdlib.h>
     #include <string.h>
     #include "utils.h"
 
-    int signup(void);
+    int login(void);
 
     #endif

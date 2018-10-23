@@ -1,35 +1,44 @@
-/* Function: Create User */
-#include "../include/essentials.h"
+/*
+ * This source file is composed by, and solely by,
+ * the `signup` function. The user will be prompted
+ * to inser a valid login and password:
+ * the LOGIN must be unique (not previously present 
+ * in `contas.txt` file) and the PASSWORD must 
+ * be greater than 8 in length. Else, if the provided
+ * credetials do not match the speficitations, the 
+ * account creation will fail and he`ll be prompted
+ * to try again.
+ */
+
 #include "../include/signup.h"
 
 int signup(void){
     system("clear");
-    // Open file with account credentials w/ read & append permission
-    const char *path = "contas.txt";
+    /* open file containning user credentials w/ read & append permission */
+    const char *path = "../database/auth/usuario.txt";
     FILE *fp = fopen(path, "a+");
-    // Receive user login
+    /* allocate memory for user login */
     char *login = (char *)malloc(MAX_SIZE * sizeof(char *));
     printf("Login: ");
     scanf("%s", login);
-    // Check if username already exists
-    int line = 0;
+    /* allocate memory for content found on each line*/
     char *lineContent = (char *)malloc(MAX_SIZE * sizeof(char *));
     while (fgets(lineContent, MAX_SIZE, fp) != NULL){
-        if (strstr(lineContent, login)){
+        if (strstr(lineContent, login)){ /* compare strings */
             printf("\nOh não! Seu login já foi escolhido! Tente utilizar outro login!\n");
             for(int timer = 0; timer < 1000000000; timer++){};
+            /* free allocated memory */
             free(lineContent);
             free(login);
             fclose(fp);
             return 1;
         }
-        line++;
     }
     char *password = (char *)malloc(MAX_SIZE * sizeof(char *));
     printf("Senha: ");
     scanf("%s", password);
     fprintf(fp, "%s,%s\n", login, password);
-    // Free allocated memory
+    /* free allocated memory */
     free(lineContent);
     free(login);
     free(password);
