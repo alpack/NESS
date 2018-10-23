@@ -15,7 +15,8 @@ int createUser(void){
     printf("Digite o seu usuario: ");
     scanf("%s", username);
     printf("Digite uma description: ");
-    scanf("%s", description);
+    fflush(stdin);
+    fgets(description, BUFFER_SIZE, stdin);
     /* create a card for this user, name with his username */
     char userFile[strlen(path) + strlen(username) + strlen(extension) + 1];
     snprintf(userFile, sizeof(userFile), "%s%s%s", path, username, extension);
