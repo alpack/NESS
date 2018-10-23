@@ -12,6 +12,7 @@
  */
 
 #include "../include/authMenu.h"
+#include "../include/createUser.h"
 
 void authMenu(void){
     int choice = 0; /* holds user choice */
@@ -29,6 +30,7 @@ void authMenu(void){
             /* call signup() until user sucessfully creates an account */
             while(signup() == 1)
                 signup();
+            createUser();
             /* TO-DO: prompt cadastro() (in `cadastro.c`) to make user's gamified card */
             break;
         case 2:

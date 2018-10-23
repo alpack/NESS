@@ -1,50 +1,55 @@
-# Compiler
-CC = gcc-8
+## DIRECTORIES
+# source files (.c)
+SRC	= src/
+SOURCES	:= $(wildcard $(SRC)*.c)
+# header files (.h)
+INC  = include/
+INCLUDES := $(wildcard $(INC)*.h)
+# object files (.o)
+OBJ	= obj/
+OBJECTS	:= $(SOURCES:$(SRC)%.c=$(OBJ)%.o)
+# dependencies (.d)
+DEP	= dep/
+DEPENDS	:= $(OBJECTS:$(OBJ)%.o=$(DEP)%.d)
+# executables (binaries)
+BIN	= bin/
 
-# Contains header files
-INCLUDE = include/
-INCLUDES := $(wildcard $(INCLUDE)*.h)
+## COMPILER AND WARNINGS
+CC	= gcc
+TARGET	= NESS
+CFLAGS	= -Wall -Wextra -pedantic -g -O0 -I$(INC)
+LFLAGS	= 
+REMOVE	:= rm -rf
 
-# Compile with all the warnings on
-CFLAGS = -Wall -I$(INCLUDE)
-LDFLAGS = -lm
+# Linking
+$(BIN)$(TARGET): $(OBJECTS) $(CMN_OBJ)
+	mkdir -p $(BIN)
+	$(CC) $(LFLAGS) -o $@ $(OBJECTS) $(CMN_OBJ)
+	@echo "Linking complete"
 
-# Contains source files
-SRC = src/
-SOURCES := $(wildcard $(SRC)*.c)
+-include $(DEPENDS)
 
-# Contains object files
-OBJ = obj/
-OBJECTS := $(patsubst %.c, $(OBJ)%.o, $(notdir $(SOURCES)))
+# Compilation
+$(OBJECTS): $(OBJ)%.o : $(SRC)%.c
+	mkdir -p $(OBJ)
+	mkdir -p $(DEP)
+	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -I$(INC) -MM -MT '$(OBJ)$*.o' $(SRC)$*.c > $(DEP)$*.d
+	@echo "Compiled $<"
 
-# Contains executables
-BIN = bin/
-BINS := $(patsubst %.c, $(BIN)%, $(notdir $(SOURCES)))
+# Make commands
+.PHONY: clean
+clean:
+	$(REMOVE) $(OBJECTS) $(OBJ) $(BIN) $(DEP)
+	@echo "Deleted $<"
 
-all : $(BINS)
+.PHONY: remove
+remove:
+	$(REMOVE) $(BIN)$(TARGET)
+	$(REMOVE) $(OBJECTS)
+	$(REMOVE) $(DEPENDS)
+	$(REMOVE) cscope.*
+	@echo "Deleted $<"
 
-.SECONDEXPANSION:
-SRCFILE = $(patsubst $(OBJ)%.o, $(SRC)%.c,$@)
-OBJFILE = $(patsubst $(BIN)%, $(OBJ)%.o,$@)
-BINFILE = $@
-
-# Rule to make executables
-$(BIN)% : $(OBJECTS)
-	$(CC) $(OBJFILE) $(LDFLAGS) -o $(BINFILE)
-
-# Rule to make object files
-$(OBJ)%.o : $(SOURCES) $(INCLUDES)
-	$(CC) $(SRCFILE) $(CFLAGS) -c -o $(OBJFILE)
-
-# Don't remove intermediate object files
-.PRECIOUS : $(OBJECTS)
-
-make_dirs:
-	mkdir -p $(OBJ) $(BIN)
-
-clean_obj:
-	-rm $(OBJECTS)
-
-clean :
-	-rm $(OBJECTS)
-	-rm $(BINS)
+.PHONY: all
+all: $(BIN)$(TARGET)

@@ -6,9 +6,7 @@
 
 #include "../include/search.h"
 
-int search(FILE *fp, char string[MAX_SIZE]){
-    /* open file containning user credentials w/ read & append permission */
-    // FILE *fp = fopen(path, "r");
+int search(FILE *fp, char *string){
     /* initialize variables to hold string frequency, location, and line content*/
     int results = 0, line = 0;
     char *lineContent = (char *)malloc(BUFFER_SIZE * sizeof(char *));
@@ -24,5 +22,5 @@ int search(FILE *fp, char string[MAX_SIZE]){
     free(lineContent);
     free(string);
     fclose(fp);
-    return results; 
+    return results;
 }

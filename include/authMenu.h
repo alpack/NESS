@@ -11,7 +11,6 @@
     #include <stdlib.h>
     #include "login.h"
     #include "signup.h"
-    #include "utils.h"
 
     void authMenu(void);
 

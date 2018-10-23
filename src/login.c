@@ -11,8 +11,8 @@
 int login(void){
     system("clear"); /* clear terminal */
     /* allocate memory for user login and password */ 
-    char *login = (char *)malloc(MAX_SIZE * sizeof(char *));
-    char *password = (char *)malloc(MAX_SIZE * sizeof(char *));
+    char *login = (char *)malloc(MAX_CHAR * sizeof(char *));
+    char *password = (char *)malloc(MAX_CHAR * sizeof(char *));
     printf("Login: ");
     scanf("%s", login);
     printf("Senha: ");
@@ -21,14 +21,14 @@ int login(void){
     const char *path = "../database/auth/usuario.txt";
     FILE *fp = fopen(path, "r");
     /* create variable to hold current line's content and compare to user input */
-    char *lineContent = (char *)malloc(MAX_SIZE * sizeof(char *));
-    while (fgets(lineContent, MAX_SIZE, fp) != NULL){
+    char *lineContent = (char *)malloc(MAX_CHAR * sizeof(char *));
+    while (fgets(lineContent, MAX_CHAR, fp) != NULL){
         if (strstr(lineContent, login) && strstr(lineContent, password)){
-            free(lineContent); 
-            free(login); 
-            free(password);
-            fclose(fp);
-            return 0;
+        free(lineContent); 
+        free(login); 
+        free(password);
+        fclose(fp);
+        return 0;
         }
     }
     /* free allocated memory */

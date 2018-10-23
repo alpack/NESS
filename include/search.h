@@ -10,8 +10,8 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include <string.h>
-    #include "utils.h"
+    #define BUFFER_SIZE 1024
 
-    int search(FILE *fp, char string[MAX_SIZE]);
+    int search(FILE *fp, char *string);
 
     #endif

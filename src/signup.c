@@ -18,12 +18,12 @@ int signup(void){
     const char *path = "../database/auth/usuario.txt";
     FILE *fp = fopen(path, "a+");
     /* allocate memory for user login */
-    char *login = (char *)malloc(MAX_SIZE * sizeof(char *));
+    char *login = (char *)malloc(MAX_CHAR * sizeof(char *));
     printf("Login: ");
     scanf("%s", login);
     /* allocate memory for content found on each line*/
-    char *lineContent = (char *)malloc(MAX_SIZE * sizeof(char *));
-    while (fgets(lineContent, MAX_SIZE, fp) != NULL){
+    char *lineContent = (char *)malloc(BUFFER_SIZE * sizeof(char *));
+    while (fgets(lineContent, BUFFER_SIZE, fp) != NULL){
         if (strstr(lineContent, login)){ /* compare strings */
             printf("\nOh não! Seu login já foi escolhido! Tente utilizar outro login!\n");
             for(int timer = 0; timer < 1000000000; timer++){};
@@ -34,10 +34,10 @@ int signup(void){
             return 1;
         }
     }
-    char *password = (char *)malloc(MAX_SIZE * sizeof(char *));
+    char *password = (char *)malloc(MAX_CHAR * sizeof(char *));
     printf("Senha: ");
     scanf("%s", password);
-    fprintf(fp, "%s,%s\n", login, password);
+    fprintf(fp, "%s,%s", login, password);
     /* free allocated memory */
     free(lineContent);
     free(login);
@@ -45,5 +45,6 @@ int signup(void){
     fclose(fp);
     printf("\nParabéns, sua conta foi criada!\n");
     for(int timer = 0; timer < 1000000000; timer++){};
+    system("clear");
     return 0;
 }
