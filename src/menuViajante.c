@@ -7,10 +7,11 @@
 */
 
 #include <stdio.h>
+#include <string.h>
 #include ".../include/menuViajante.h"
 
 /* CRIA LOOP PARA FICAR CHAMANDO FUNÇÃO */
-int menuViajante(void) {
+int menuViajante(char *user) {
     while(1) {
         system("clear");
         int choice;
@@ -39,7 +40,7 @@ int menuViajante(void) {
 }
 
 
-void Mapa(void) {
+void Mapa(char *user) {
     system("clear");
     int check;
 
@@ -57,11 +58,11 @@ void Mapa(void) {
     }
 }
 
-void Quest(void) {
+void Quest(char *user) {
     /* ACESSO AS QUESTS */
 }
 
-void Menu(void) {
+void Menu(char *user) {
     system("clear");
     int check;
 
@@ -91,22 +92,90 @@ void Menu(void) {
     }
 }
 
-void inbox(void) {
+void inbox(char *user) {
     /* ACESSA A CAIXA DE MENSAGENS */
 }
 
-void changeInfo(void) {
-    /* MUDA AS INFORMAÇÕES */
+void changeInfo(char *user) {
+    /* changes the info that the user want */
+    system("clear");
+    int case;
+    char archive[] = strcat(user, ".txt");  // gets the user card (file)
+    char arcDir[] = strcat("/database/auth/", archive);
+    char info[MAX_CHAR];
+    char line[BUFFER_SIZE];
+    FILE *file = fopen(arcDir, "r+");
+    /* shows the actual information in the database */
+    printf("Informações:\n\n");
+    for (int count = 0; count != EOF; count++)
+        printf("Linha %d: %s\n", count, lineContent);
+    /* gets the information to be edited */
+    printf("Digite o que você deseja editar: ");
+    scanf("%s", info);
+    //
+    /* NEEDS TO KNOW WHAT INFORMATION CAN BE EDITED */
+    fclose(file);
+    /* check if the user wants to edit more information */
+    char checker;
+    printf("Você deseja editar outra informação?[s/n]: ");
+    scanf("%c", &check);
+    if (check == 's') {
+        changeInfo(user);
+    }else {
+        exit(0);
+    }
 }
 
-void changeHab(void) {
+void changeHab(char *user) {
     /* MODIFICA HABILIDADES */
 }
 
-void addHab(void) {
-    /* ADICIONA NOVAS HABILIDADES */
+void addHab(char *user) {
+    /* add new hability to user information */
+    system("clear");
+    char newHab[MAX_CHAR];
+    char archive[] = strcat(user, ".txt");  // gets the user card (file)
+    FILE *file = fopen(archive, "r+");
+    /* gets the new hability to insert */
+    printf("Digite a habilidade que deseja adicionar: ");
+    scanf("%s", newHab);  // needs to input with space
+    /* check if it exists */
+    char check[] = strcat(newHab, ".txt");
+    char checkDir[] = strcat("/database/habilidades/", check);
+    FILE *checkfile = fopen(checkDir, "a+");
+    if (checkfile) {
+        fprintf(checkfile, "%s\n", user);  // OBS: if the format of the database changes, change this function
+    }else {   // creates a new file for the hability if it don't exists
+        checkfile = fopen(checkDir, "w");
+        fprintf(checkfile, "%s\n", user);
+    }
+    fclose(checkfile);
+    /* now check if the user wants to add more habilities */
+    char checker;
+    printf("Você quer adicionar mais habilidade?[s/n]: ");
+    scanf("%d", &c);
+    if (checker == 's') {
+        addHab(user);
+    }else {
+        exit(0);
+    }
 }
 
-void removeHab(void) {
+void removeHab(char *user) {
     /* REMOVER HABILIDADES */
+}
+
+int search(FILE *fp, char *string){ /* custom function from search.c */
+    /* initialize variables to hold string frequency, location, and line content*/
+    int results = 0, line = 0;
+    char *lineContent = (char *)malloc(BUFFER_SIZE * sizeof(char *));
+    while (fgets(lineContent, BUFFER_SIZE, fp) != NULL){
+        if (strstr(lineContent, string)){
+            // printf("Palavra encontrada na linha: %d\n", line);
+            // printf("%s\n", lineContent);
+            results++;
+        }
+        line++;
+    }
+    return line;
 }
