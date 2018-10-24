@@ -55,7 +55,6 @@ remove:
 	$(REMOVE) $(BIN)$(TARGET)
 	$(REMOVE) $(OBJECTS)
 	$(REMOVE) $(DEPENDS)
-	$(REMOVE) cscope.*
 	@echo "Deleted $<"
 
 .PHONY: all

@@ -55,13 +55,16 @@ int createUser(void){
     char choice;
     printf("\nQuer compartilhar alguma habilidade no seu perfil? (s/n)");
     scanf("%c", &choice);
+    getchar();
     while(choice == 's'){
         int aptitude;
         char skill[MAX_CHAR];
         printf("\nHabilidade: ");
         scanf("%s", skill);
+        getchar();
         printf("\nDe 1 à 5, qual é tua aptitude em %s?", skill);
         scanf("%d", &aptitude);
+        getchar();
         /* concatenate user skill with .txt extension */
         char *path = "../database/habilidades/", *extension = ".txt";
         char file[strlen(skill) + strlen(extension) + strlen(path) +1];
@@ -71,6 +74,8 @@ int createUser(void){
         fprintf(fp, "%s;%d\n", username, aptitude);
         printf("\nQuer adicionar outra habilidade ao seu perfil? (s/n)");
         scanf("%c", &choice);
+        getchar();
+        // scanf("%c", &choice);
     }
     printf("\nParabéns, teu cadastro está completo! Agora só falta por a mão na massa!\n");
     return 0;
