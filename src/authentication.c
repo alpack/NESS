@@ -111,6 +111,7 @@ int login(void){
     char *lineContent = (char *)malloc(MAX_CHAR * sizeof(char *));
     while (fgets(lineContent, MAX_CHAR, fp) != NULL){
         if (strstr(lineContent, login) && strstr(lineContent, password)){
+        printf("Login realizado com sucesso!\n");
         free(lineContent); 
         free(login); 
         free(password);
@@ -126,6 +127,6 @@ int login(void){
     /* alert user the program failed to authenticate the credentials provided */
     printf("\nOh não! Seus dados cadastrais estão incorretos!\n");
     printf("Lembre-se que seu login e senha são case-sensitive.\n");
-    for(int timer = 0; timer < 1000000000; timer++){}; /* improvised timer */
+    for(int timer = 0; timer < 500000000; timer++); /* improvised timer */
     return 1; 
 }

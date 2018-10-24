@@ -16,18 +16,16 @@ int createUser(void){
     printf("Digite o seu usuario: ");
     scanf("%s", username); // Aqui 
     getchar();                
-    printf("Digite uma description: OF");
+    printf("Digite uma description: ");
     fgets(description, BUFFER_SIZE, stdin);
     int len = strlen(description); // tirando o \n do final do input
     if (len > 0 && description[len - 1] == '\n')
-        description[len - 1] = '\0';
-    printf("passei do fgets");                                
+        description[len - 1] = '\0';                          
     /* create a card for this user, name with his username */
     char userFile[strlen(path) + strlen(username) + strlen(extension) + 1];
     snprintf(userFile, sizeof(userFile), "%s%s%s", path, username, extension);
     FILE *userCard = fopen(userFile, "a");
-    printf("passei do fopen");
-    fprintf(userCard, "%s,%s", username, description);
+    fprintf(userCard, "%s;%s", username, description);
     
     /**************************************************************************/
     /***************** OPTION 1: LIMITED SKILLS TO CHOSE FROM *****************/
@@ -70,7 +68,7 @@ int createUser(void){
         snprintf(file, sizeof(file), "%s%s%s", path, skill, extension);
         /* Open `fp` file in the database w/ append permission */
         FILE *fp = fopen(file, "a+");
-        fprintf(fp, "%s,%d\n", username, aptitude);
+        fprintf(fp, "%s;%d\n", username, aptitude);
         printf("\nQuer adicionar outra habilidade ao seu perfil? (s/n)");
         scanf("%c", &choice);
     }
@@ -78,18 +76,3 @@ int createUser(void){
     return 0;
 }
 
-/* 
-for (int i = 0; i < sizeof(descricao); i++)
-    {
-        scanf("%c", &letra);
-        if (letra == '\n')
-        {
-            break;
-        }
-        else if(isalpha(letra))
-        {
-            descricao[i] = letra;
-        }
-    }
-
-*/
