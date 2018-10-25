@@ -49,6 +49,7 @@ int createUser(void){
     }
 
     printf("\nParabéns, teu cadastro está completo! Agora só falta por a mão na massa!\n");
+    for(int timer = 0; timer < 1000000000; timer++){};
     return 0;
 }
 

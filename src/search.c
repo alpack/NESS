@@ -27,6 +27,7 @@ void search(void){
         if (strstr(lineContent, talent)){
             printf("Opa! Encontramos um match ;)\n");
             printf("%s\n", lineContent);
+            for(int timer = 0; timer < 1000000000; timer++){};
         }
     }
     free(talent);
