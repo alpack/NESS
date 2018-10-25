@@ -1,11 +1,3 @@
----
-description: >-
-  “Humanity has the stars in its future, and that future is too important to be
-  lost under the burden of juvenile folly and ignorant superstition”.  — Isaac
-  Asimov
-  
----
-
 # Project NESS
 
 ## NESS
