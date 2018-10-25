@@ -21,14 +21,14 @@ void search(void){
         fclose(fp);
         exit(0);
     }
+    else{
+        printf("Opa! Encontramos um match ;)\n");
+    }
 
     char lineContent[BUFFER_SIZE];
     while (fgets(lineContent, BUFFER_SIZE, fp) != NULL){
-        if (strstr(lineContent, talent)){
-            printf("Opa! Encontramos um match ;)\n");
-            printf("%s\n", lineContent);
-            for(int timer = 0; timer < 1000000000; timer++){};
-        }
+        printf("%s\n", lineContent);
+        for(int timer = 0; timer < 1000000; timer++){};
     }
     free(talent);
     fclose(fp);
