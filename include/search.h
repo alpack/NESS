@@ -12,6 +12,6 @@
     #include <string.h>
     #define BUFFER_SIZE 1024
 
-    int search(FILE *fp, char *string);
+    int search(FILE *fp);
 
     #endif

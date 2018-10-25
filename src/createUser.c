@@ -10,7 +10,7 @@
 
 /* TO-DO: Integrate with Reiso's code */ 
 int createUser(void){
-    char *path = "../database/habilidades/", *extension = ".txt";
+    char *path = "../database/users/", *extension = ".txt";
     /* variables to withold user information */
     char username[MAX_CHAR], description[MAX_CHAR];
     printf("Digite o seu usuario: ");

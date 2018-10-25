@@ -12,6 +12,7 @@
  */
 #include "../include/authentication.h"
 #include "../include/createUser.h" 
+#include "../include/search.h" 
 
 void authMenu(void){
     int choice = 0; /* holds user choice */
@@ -100,6 +101,7 @@ int login(void){
     /* allocate memory for user login and password */ 
     char *login = (char *)malloc(MAX_CHAR * sizeof(char *));
     char *password = (char *)malloc(MAX_CHAR * sizeof(char *));
+    int escolha;
     printf("Login: ");
     scanf("%s", login);
     printf("Senha: ");
@@ -115,6 +117,19 @@ int login(void){
         free(lineContent); 
         free(login); 
         free(password);
+        printf("1 -> match de usuario por habilidade\n");
+        printf("2 -> pesquisa de perfil\n");
+        scanf("%d", &escolha);
+        if(escolha == 1){
+            char id[MAX_CHAR];
+            printf("Qual a habilidade que você quer procurar: ");
+            scanf("%s", id);
+            char *database = "../database/users", *extension = ".txt";
+            int PATH_SIZE = strlen(database) + strlen(id) + strlen(extension) +2;
+            char* PATH = malloc(PATH_SIZE);
+            snprintf(PATH, sizeof(PATH), "%s/%s%s", database, id, extension);
+            search(*PATH);
+         }
         fclose(fp);
         return 0;
         }
