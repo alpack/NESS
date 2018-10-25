@@ -7,11 +7,10 @@
     #define BUFFER_SIZE 1024
 
     int menuViajante(char *user);
-    void Menu(char *user);
     void Mapa(char *user);
-    void Quests(char *user);
-    void inbox(char *user);
     void Quest(char *user);
+    void Menu(char *user);
+    void inbox(char *user);
     void changeInfo(char *user);
     void changeHab(char *user);
     void addHab(char *user);
