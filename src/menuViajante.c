@@ -5,7 +5,7 @@
 
 
 */
-
+// NEEDS TO CREATE FUNCTION TO REMOVE LINES FROM ARCHIVES
 #include <stdio.h>
 #include <string.h>
 #include ".../include/menuViajante.h"
@@ -21,7 +21,7 @@ int menuViajante(char *user) {
         printf("2. Menu\n");
         printf("3. Sair\n")
         printf("\nDigite sua opção: ");
-        scanf("%d", &check);
+        scanf("%d", &choice);
 
         switch (choice) {
             case 1:
@@ -64,7 +64,7 @@ void Quest(char *user) {
 
 void Menu(char *user) {
     system("clear");
-    int check;
+    int choice;
 
     printf("Escolha uma opção e digite o numero correspondente:\n");
     printf("\n1. Caixa de mensagens\n")
@@ -74,19 +74,19 @@ void Menu(char *user) {
     printf("5. Remover habilidades\n");
     printf("6. Volta ao menu\n");
     printf("\nDigite sua opção: ");
-    scanf("%d", &check);
+    scanf("%d", &choice);
 
     switch (check) {
         case 1:
             /* ACESSA A CAIXA DE MENSAGENS (criar função)*/
         case 2:
-            /* MODIFICA INFORMAÇÕES (criar função)*/
+            changeInfo(user);
         case 3:
-            /* ALTERA HABILIDADES (criar função)*/
+            changeHab(user);
         case 4:
-            /* ACRESCENTA NOVAS HABILIDADES (criar função)*/
+            addHab(user);
         case 5:
-            /* REMOVE HABILIDADES (criar função) */
+            removeHab(user);
         case 6:
             exit(0);
     }
@@ -107,19 +107,25 @@ void changeInfo(char *user) {
     FILE *file = fopen(arcDir, "r+");
     /* shows the actual information in the database */
     printf("Informações:\n\n");
-    for (int count = 0; count != EOF; count++)
-        printf("Linha %d: %s\n", count, lineContent);
+    while (line != EOF) {
+        fgets(line, BUFFER_SIZE, arcDir);
+        printf("%s\n", line);
+    }
     /* gets the information to be edited */
-    printf("Digite o que você deseja editar: ");
+    printf("\nDigite o que você deseja editar: ");
     scanf("%s", info);
     //
     /* NEEDS TO KNOW WHAT INFORMATION CAN BE EDITED */
+    free(archive);
+    free(arcDir);
+    free(info);
+    free(line);
     fclose(file);
     /* check if the user wants to edit more information */
-    char checker;
+    char choice;
     printf("Você deseja editar outra informação?[s/n]: ");
-    scanf("%c", &check);
-    if (check == 's') {
+    scanf("%c", &choice);
+    if (choice == 's') {
         changeInfo(user);
     }else {
         exit(0);
@@ -139,7 +145,7 @@ void addHab(char *user) {
     /* gets the new hability to insert */
     printf("Digite a habilidade que deseja adicionar: ");
     scanf("%s", newHab);  // needs to input with space
-    /* check if it exists */
+    /* check if hability file exists */
     char check[] = strcat(newHab, ".txt");
     char checkDir[] = strcat("/database/habilidades/", check);
     FILE *checkfile = fopen(checkDir, "a+");
@@ -149,12 +155,17 @@ void addHab(char *user) {
         checkfile = fopen(checkDir, "w");
         fprintf(checkfile, "%s\n", user);
     }
+    /* ADD HABILITY TO USER CARD (need to code) */
+    free(newHab);
+    free(archive);
+    free(check);
+    free(checkDir);
     fclose(checkfile);
     /* now check if the user wants to add more habilities */
-    char checker;
+    char choice;
     printf("Você quer adicionar mais habilidade?[s/n]: ");
-    scanf("%d", &c);
-    if (checker == 's') {
+    scanf("%d", &choice);
+    if (choice == 's') {
         addHab(user);
     }else {
         exit(0);
@@ -162,7 +173,37 @@ void addHab(char *user) {
 }
 
 void removeHab(char *user) {
-    /* REMOVER HABILIDADES */
+    system("clear");
+    char hability[MAX_CHAR];
+    /* SHOW THE HABILITIES IN THE USER CARD */
+    printf("Digite a habilidade que você quer remover:\n");
+    scanf("%d", hability);
+    /* REMOVES FROM THE HABILITY ARCHIVE */
+    char nameoffile[] = strcat(hability, ".txt");  // lembrar de mudar de acordo com o modo que for amazenar dados
+    char pathoffile[] = strcat("/database/habilidades/", nameoffile);
+    FILE *file = (pathoffile, "r+");
+    /* FUNCTION TO REMOVE THE LINE */
+    free(hability);
+    free(nameoffile);
+    free(pathoffile);
+    fclose(file);
+    /* now removes the hability from the user card */
+    char nameofthefile[] = strcat(user, ".txt");
+    char pathofthefile[] = strcat("/database/auth/", nameofthefile);
+    file = fopen(pathofthefile, "r+");
+    /* FUNCTION TO REMOVE THE LINE */
+    free(nameofthefile);
+    free(pathofthefile);
+    fclose(file);
+    /* ASK IF THE USER WANTS TO REMOVE MORE HABILITIES */
+    char choice;
+    printf("Você deseja remover outras habilidades?[s/n]: ");
+    scanf("%c\n", &choice);
+    if (choice == 's') {
+        removeHab(user);
+    }else {
+        exit(0);
+    }
 }
 
 int search(FILE *fp, char *string){ /* custom function from search.c */
@@ -177,5 +218,6 @@ int search(FILE *fp, char *string){ /* custom function from search.c */
         }
         line++;
     }
+    free(lineContent);
     return line;
 }
