@@ -3,6 +3,7 @@
 # CFLAGS  = compiler flags (-Warnall)    #
 # LDFLAGS = linker flags                 #
 # TARGET  = executable's name            #
+SHELL   = /bin/bash
 CC	    = gcc
 CFLAGS	= -Wall
 LDFLAGS	= -lm
@@ -22,7 +23,7 @@ INC = include/
 DEP	= dep/
 OBJ	= obj/
 BIN	= bin/
-DB = database/
+DB	= database/
 
 #### MOCK DIRECTORY ASSIGNMENTS ####     #
 ENTITIES = database/{boards,world,characters,resources,alliances}
@@ -47,10 +48,10 @@ ITEMS       = resources/items/{item01.txt,item02.txt,item03.txt}
 INVENTORIES = resources/inventories/{inventory01.txt,inventory02.txt,inventory03.txt}
 MAILBOXES   = resources/mailboxes/{mailbox01.txt,mailbox02.txt,mailbox03.txt}
 # ALLIANCES TREE
-ALLIANCES  = database/alliances/{guilds,tribes,squads}
-GUILDS = alliances/guilds/{guild01.txt,guild02.txt,guild03.txt}
-TRIBES = alliances/tribes/{tribe01.txt,tribe02.txt,tribe03.txt}
-SQUADS = alliances/squads/{squad01.txt,squad02.txt,squad03.txt}
+ALLIANCES = database/alliances/{guilds,tribes,squads}
+GUILDS    = alliances/guilds/{guild01.txt,guild02.txt,guild03.txt}
+TRIBES    = alliances/tribes/{tribe01.txt,tribe02.txt,tribe03.txt}
+SQUADS    = alliances/squads/{squad01.txt,squad02.txt,squad03.txt}
 
 #### WILDCARD EXPANSIONS ####               #
 # SOURCES  = get all .c files in src/       #
@@ -89,7 +90,7 @@ help:
 	@echo '            help     -  display different usages of the makefile'
 	@echo '            remove   -  remove only the compiled and built files - doesnt remove folders'
 	@echo '            tree     -  display project directory in tree format'
-	@echo '            database -  creates directories for the project's database'
+	@echo '            database -  creates directories for the projects database'
 	@echo '            reset    -  deletes all database folders and their contents'
 	@echo ' '
 
@@ -114,19 +115,19 @@ remove:
 .PHONY: reset
 reset:
 	$(REMOVE) $(DB)
-	@echo Database erased. I hope you know what you are doing.
+	@echo 'Database erased. I hope you know what you are doing.'
 
 .PHONY: database
 database:
-	$(MKDIR) $(ENTITIES) 
+	$(MKDIR) $(ENTITIES)
 	$(MKDIR) $(BOARDS) $(RESOURCES) $(WORLD) $(CHARACTERS) $(ALLIANCES)
-	@echo mock database is up and ready for use! ;) 
+	@echo 'Mock database is up and ready for use! ;)'
 
 .PHONY: mockfiles
 mockfiles:
-	touch $(DB)$(NEWS) $(DB)$(POSTS) $(DB)$(EPICS)
+	touch $(DB)$(NEWS) $(DB)$(POSTS) $(DB)$(AGENDA)
 	touch $(DB)$(ZONES) $(DB)$(QUESTS) $(DB)$(EPICS)
 	touch $(DB)$(PROFILES) $(DB)$(TALENTS) $(DB)$(MILESTONES)
 	touch $(DB)$(ITEMS) $(DB)$(INVENTORIES) $(DB)$(MAILBOXES)
 	touch $(DB)$(GUILDS) $(DB)$(TRIBES) $(DB)$(SQUADS)
-	@echo Mock data created! :D
+	@echo 'Mock data created! :D'

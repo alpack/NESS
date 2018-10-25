@@ -1,7 +1,7 @@
 /*
  * This source file is composed by, and solely by,
  * the `authMenu` function - which enables the user to either
- * login or create an account (or leave the program).
+ * username or create an account (or leave the program).
  * To CREATE an account, users must `enter 1`,
  * and further follow the steps for the `signup` function.
  * To LOGIN into their accounts, users must `enter 2`,
@@ -12,10 +12,13 @@
  */
 #include "../include/authentication.h"
 #include "../include/createUser.h" 
+#include "../include/setPath.h"
+#include "../include/menuViajante.h"
 
 void authMenu(void){
-    int choice = 0; /* holds user choice */
-    do{             /* show menu while choice = 0 */
+    /* show menu while choice = 0 */
+    int choice = 0;
+    do{
         system("clear");
         printf("\n MENU INICIAL\n");
         printf("\n  1: Criar Conta\n");
@@ -23,6 +26,7 @@ void authMenu(void){
         printf("\n  3: Sair\n\n");
         scanf("%d", &choice);
     } while(!choice);
+
     /* `switch` in function of user's `choice` */
     switch(choice){ 
         case 1:
@@ -31,11 +35,11 @@ void authMenu(void){
                 signup();
             createUser();
             /* TO-DO: prompt cadastro() (in `cadastro.c`) to make user's gamified card */
-            break;
         case 2:
-            /* call login() until user inserts valid login and password */
+            /* call username() until user inserts valid username and password */
             while(login() == 1)
                 login();
+            Quest();
             /* TO-DO: create menu function for authenticated users */ 
             break;
         case 3:
@@ -44,7 +48,7 @@ void authMenu(void){
 }
 /*
  * The `signup()` function requires that the user to
- * insert a valid login and password:
+ * insert a valid username and password:
  *  - LOGIN: must be unique (not previously present 
  *      in `contas.txt` file)
  *  - PASSWORD: must be greater than 8 in length. 
@@ -54,79 +58,79 @@ void authMenu(void){
  */
 int signup(void){
     system("clear");
-    /* open file containning user credentials w/ read & append permission */
-    const char *path = "../database/auth/usuario.txt";
-    FILE *fp = fopen(path, "a+");
-    /* allocate memory for user login */
-    char *login = (char *)malloc(MAX_CHAR * sizeof(char *));
-    printf("Login: ");
-    scanf("%s", login);
-    /* allocate memory for content found on each line*/
-    char *lineContent = (char *)malloc(BUFFER_SIZE * sizeof(char *));
-    while (fgets(lineContent, BUFFER_SIZE, fp) != NULL){
-        if (strstr(lineContent, login)){ /* compare strings */
-            printf("\nOh não! Seu login já foi escolhido! Tente utilizar outro login!\n");
-            for(int timer = 0; timer < 1000000000; timer++){};
-            /* free allocated memory */
-            free(lineContent);
-            free(login);
-            fclose(fp);
-            return 1;
-        }
-    }
+    char *username = (char *)malloc(MAX_CHAR * sizeof(char *));
     char *password = (char *)malloc(MAX_CHAR * sizeof(char *));
+    printf("Login: ");
+    scanf("%s", username);
+
+    /* verify if username is available before asking for password */
+    char *path = setPath("characters", "profiles", username);
+    FILE *check = fopen(path, "r+");
+    if(check){
+        printf("\nOh não! Seu username já foi escolhido! Tente utilizar outro username!\n");
+        for(int timer = 0; timer < 1000000000; timer++){};
+        free(username);
+        fclose(check);
+        return 1;
+    }
+
+    /* open a new file if username is available */
+    FILE *fp = fopen(path, "a");
     printf("Senha: ");
     scanf("%s", password);
-    fprintf(fp, "%s,%s\n", login, password);
+    fprintf(fp, "%s,%s\n", username, password);
+
     /* free allocated memory */
-    free(lineContent);
-    free(login);
-    free(password);
-    fclose(fp);
     printf("\nParabéns, sua conta foi criada!\n");
     for(int timer = 0; timer < 1000000000; timer++){};
-    system("clear");
+    free(username);
+    free(password);
+    fclose(fp);
     return 0;
 }
 /*
- * The login() function is responsible for authenticating 
- * user credentials. Upon calling `login()`, it'll receive 
- * both `login` and `password` from the user, in order to 
+ * The username() function is responsible for authenticating 
+ * user credentials. Upon calling `username()`, it'll receive 
+ * both `username` and `password` from the user, in order to 
  * open a file (contas.txt - which contains all user data
  * and verify that the credentials are correct.
  */
 int login(void){
-    system("clear"); /* clear terminal */
-    /* allocate memory for user login and password */ 
-    char *login = (char *)malloc(MAX_CHAR * sizeof(char *));
+    system("clear");
+    char *username = (char *)malloc(MAX_CHAR * sizeof(char *));
     char *password = (char *)malloc(MAX_CHAR * sizeof(char *));
     printf("Login: ");
-    scanf("%s", login);
+    scanf("%s", username);
+    getchar();
     printf("Senha: ");
     scanf("%s", password);
-    /* open file containning user credentials w/ read-only permission */
-    const char *path = "../database/auth/usuario.txt";
-    FILE *fp = fopen(path, "r");
+
     /* create variable to hold current line's content and compare to user input */
+    char *path = setPath("characters", "profiles", username);
+    FILE *fp = fopen(path, "r");
+
+    /* create variable to hold all of the content in a line */
     char *lineContent = (char *)malloc(MAX_CHAR * sizeof(char *));
     while (fgets(lineContent, MAX_CHAR, fp) != NULL){
-        if (strstr(lineContent, login) && strstr(lineContent, password)){
+        if (strstr(lineContent, username) && strstr(lineContent, password)){
         printf("Login realizado com sucesso!\n");
         free(lineContent); 
-        free(login); 
+        free(username); 
         free(password);
         fclose(fp);
         return 0;
         }
     }
-    /* free allocated memory */
-    free(lineContent); 
-    free(login); 
-    free(password);
-    fclose(fp);
+
     /* alert user the program failed to authenticate the credentials provided */
     printf("\nOh não! Seus dados cadastrais estão incorretos!\n");
-    printf("Lembre-se que seu login e senha são case-sensitive.\n");
+    printf("Lembre-se que seu username e senha são case-sensitive.\n");
     for(int timer = 0; timer < 500000000; timer++); /* improvised timer */
+    
+    /* free allocated memory */
+    free(lineContent);
+    free(username);
+    free(password);
+    fclose(fp);
     return 1; 
 }

@@ -4,8 +4,8 @@
  * 
  */
 
-#ifndef CREATEUSER_H
-    #define CREATEUSER_H
+#ifndef MENUVIAJANTE_H
+    #define MENUVIAJANTE_H
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -13,6 +13,9 @@
     #define MAX_CHAR 50
     #define BUFFER_SIZE 1024
 
-    int createUser(void);
-
+    void menuViajante(void);
+    void Mapa(void);
+    void Quest(void);
+    void Menu(void);
+    
     #endif
