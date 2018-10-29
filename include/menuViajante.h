@@ -2,6 +2,7 @@
     #define MENUVIAJANTE_H
 
     #include <stdio.h>
+    #include <stdlib.h>
     #include <string.h>
     #define MAX_CHAR 50
     #define BUFFER_SIZE 1024
@@ -15,6 +16,6 @@
     void changeHab(char *user);
     void addHab(char *user);
     void removeHab(char *user);
-    int search(FILE *fp, char *string)
+    int search(FILE *fp, char *string);
 
     #endif
