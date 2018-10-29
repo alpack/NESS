@@ -40,16 +40,26 @@ int createUser(void){
         getchar();
 
         /* Open `fp` file in the database w/ append permission */
-        char *skillPath = setPath("characters", "talents", username);
+        char *skillPath = setPath("characters", "talents", skill);
         FILE *fp = fopen(skillPath, "a+");
-        fprintf(fp, "%s;%d;%s\n", username, aptitude, skill);
+        fprintf(fp, "%d,%s\n", aptitude, username);
         printf("\nQuer adicionar outra habilidade ao seu perfil? (s/n)");
         scanf("%c", &choice);
         getchar();
+        free(skillPath);
+        fclose(fp);
     }
-
+    
+    /* user feedback */
     printf("\nParabéns, teu cadastro está completo! Agora só falta por a mão na massa!\n");
     for(int timer = 0; timer < 1000000000; timer++){};
+    
+    /* free allocated memory space and close files */
+    free(username);
+    free(description);
+    free(userPath);
+    fclose(userCard);
+
     return 0;
 }
 

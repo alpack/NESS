@@ -106,13 +106,13 @@ help:
 	@echo ' '
 	@echo 'Usage: make [all] [clean] [database] [remove] [reset] [help] [tree]'
 	@echo ' '
-	@echo '            all      -   make a complete build of the project'
-	@echo '            clean    -  delete compiled & built files and their respective folders'
-	@echo '            help     -  display different usages of the makefile'
-	@echo '            remove   -  remove only the compiled and built files - doesnt remove folders'
-	@echo '            tree     -  display project directory in tree format'
-	@echo '            database -  creates directories for the projects database'
-	@echo '            reset    -  deletes all database folders and their contents'
+	@echo '            all       -  builds all dependencies for the project'
+	@echo '            clean     -  delete compiled & built files and their respective folders'
+	@echo '            database  -  creates directories for the projects database'
+	@echo '            mockfiles -  creates files with mocked data, for testing'
+	@echo '            help      -  display different usages of the makefile'
+	@echo '            reset     -  deletes all database folders and their contents'
+	@echo '            tree      -  display project directory in tree format'
 	@echo ' '
 
 .PHONY: all
@@ -120,26 +120,11 @@ all:
 	make database
 	make mockfiles
 	make
-	$(BIN)$(TARGET)
-
-.PHONY: tree
-tree:
-	@find . -not -path '*/\.*' | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"
 
 .PHONY: clean
 clean:
 	$(REMOVE) $(OBJECTS) $(OBJ) $(BIN) $(DEP)
-	@echo 'Deleted all compiled and built files, and their respective folders'
-
-.PHONY: remove
-remove:
-	$(REMOVE) $(BIN) $(OBJECTS) $(DEP)
-	@echo 'Removed all compiled and built files'
-
-.PHONY: reset
-reset:
-	$(REMOVE) $(DB)
-	@echo 'Database erased. I hope you know what you are doing.'
+	@echo 'Deleted all compiled and built files and their folders'
 
 .PHONY: database
 database:
@@ -154,4 +139,14 @@ mockfiles:
 	touch $(DB)$(PROFILES) $(DB)$(TALENTS) $(DB)$(MILESTONES)
 	touch $(DB)$(ITEMS) $(DB)$(INVENTORIES) $(DB)$(MAILBOXES)
 	touch $(DB)$(GUILDS) $(DB)$(TRIBES) $(DB)$(SQUADS)
-	@echo 'Mock data created! :D'
+	@echo 'Files with mock data created! :D'
+
+.PHONY: reset
+reset:
+	$(REMOVE) $(DB)
+	@echo 'Database completely erased. I hope you know what you are doing x.x'
+
+.PHONY: tree
+tree:
+	@find . -not -path '*/\.*' | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"
+
