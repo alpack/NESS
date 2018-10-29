@@ -25,7 +25,28 @@ OBJ	= obj/
 BIN	= bin/
 DB	= database/
 
-#### MOCK DIRECTORY ASSIGNMENTS ####     #
+#### MOCK DIRECTORY ASSIGNMENTS ####         #
+# ENTITIES    =                              #
+# BOARDS      =                              #
+# NEWS        =                              #
+# POSTS       =                              # 
+# AGENDA      =                              #
+# WORLD       =                              # 
+# ZONES       =                              # 
+# QUESTS      =                              # 
+# EPICS       =                              # 
+# CHARACTERS  =                              # 
+# PROFILES    =                              # 
+# TALENTS     =                              # 
+# MILESTONES  =                              # 
+# RESOURCES   =                              # 
+# ITEMS       =                              # 
+# INVENTORIES =                              # 
+# MAILBOXES   =                              # 
+# ALLIANCES   =                              # 
+# GUILDS      =                              # 
+# TRIBES      =                              # 
+# SQUADS      =                              #  
 ENTITIES = database/{boards,world,characters,resources,alliances}
 # BOARDS TREE
 BOARDS = database/boards/{news,posts,agenda}
@@ -96,6 +117,9 @@ help:
 
 .PHONY: all
 all: 
+	make database
+	make mockfiles
+	make
 	$(BIN)$(TARGET)
 
 .PHONY: tree
