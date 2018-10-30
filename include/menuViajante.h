@@ -17,5 +17,6 @@
     void addHab(char *user);
     void removeHab(char *user);
     int search(FILE *fp, char *string);
+    void removeLine(char *fileDir, char *stringFile, char *string);
 
     #endif

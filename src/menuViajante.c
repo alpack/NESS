@@ -180,26 +180,28 @@ void addHab(char *user) {
 void removeHab(char *user) {
     system("clear");
     char hability[MAX_CHAR];
-    char fileDir[] = "/database/habilidades/";
+    char habilityFile[MAX_CHAR]
+    char fileDir[MAX_CHAR] = "/database/habilidades/";
     /* SHOW THE HABILITIES IN THE USER CARD */
     printf("Digite a habilidade que você quer remover:\n");
     scanf("%s", hability);
+    //strcpy(habilityFile, hability);
     /* REMOVES FROM THE HABILITY ARCHIVE */
-    strcat(hability, ".txt");  // lembrar de mudar de acordo com o modo que for amazenar dados
-    strcat(fileDir, hability);
-    FILE *file = (fileDir, "r+");
-    /* FUNCTION TO REMOVE THE LINE */
-    free(hability);
-    free(fileDir);
-    fclose(file);
+    strcat(habilityFile, ".txt");  // lembrar de mudar de acordo com o modo que for amazenar dados
+    //strcat(fileDir, habilityFile);  // testing in the new removeLine function
+    //FILE *file = (fileDir, "r");
+    //removeLine(file, fileDir, hability);
+    //free(hability);
+    //free(fileDir);
+    //fclose(file); */
     /* now removes the hability from the user card */
     char userFile[MAX_CHAR];
     strcpy(userFile, user);
     char pathofthefile[MAX_CHAR] = "/database/auth/";
     strcat(userFile, ".txt");
     strcat(pathofthefile, userFile);
-    file = fopen(pathofthefile, "r+");
-    /* FUNCTION TO REMOVE THE LINE */
+    file = fopen(pathofthefile, "r");
+    removeHab(file, habi);
     free(userFile);
     free(pathofthefile);
     fclose(file);
@@ -214,7 +216,7 @@ void removeHab(char *user) {
     }
 }
 
-int search(FILE *fp, char *string){ /* custom function from search.c */
+int search(FILE *fp, char *dirFile, char *string){ /* custom function from search.c */
     /* initialize variables to hold string frequency, location, and line content*/
     int results = 0, line = 0;
     char *lineContent = (char *)malloc(BUFFER_SIZE * sizeof(char *));
@@ -228,4 +230,31 @@ int search(FILE *fp, char *string){ /* custom function from search.c */
     }
     free(lineContent);
     return line;
+}
+/* WORKING ON IT, STILL NEED TO KNOW HOW TO DEAL WITH FILE PATH */
+void removeLine(char *fileDir ,char *stringFile, char *string) {
+    /* GETS THE ACTUAL ARCHIVE */
+    strcpy(stringFile, string);
+    strcat(stringFile, ".txt");  // lembrar de mudar de acordo com o modo que for amazenar dados
+    strcat(fileDir, stringFile);
+    FILE *file = (fileDir, "r");
+    /* REMOVES FROM THE LINE FROM ARCHIVE */
+    char ch;
+    int counter = 1;
+    line = search(fp, hability);
+    char newFile[MAX_CHAR] = "replica.txt"  /* file to copy */
+    char mewFileDir[MAX_CHAR];  /* directory of the copy file */
+    strcpy(newFileDir, fileDir);
+    strcat(newFileDir, newFile);
+    FILE *fptr = fopen(newFileDir , "w"); /* creates the new file */
+    while (ch != EOF) {
+        ch = getc(file);
+        if (ch == '\n') {
+            counter++;
+            if (temp != line) {
+                putc(ch, fptr);
+            }
+        }
+    }
+
 }
