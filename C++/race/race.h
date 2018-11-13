@@ -1,51 +1,56 @@
 #ifndef RACE_H_INCLUDED
 #define RACE_H_INCLUDED
+#include <iostream>
 
 class Race
 {
   public:
     std::string name;
-    Race(int tp);
+    int setRace(int tp);
 };
 
-Race::Race(int tp)
+int Race::setRace(int tp)
 {
 
     if (tp == 1)
     {
-        name = "Humano";
+        this->name = "Humano";
     }
     else if (tp == 2)
     {
-        name = "Tron";
+        this->name = "Tron";
     }
     else if (tp == 3)
     {
-        name = "Automato";
+        this->name = "Automato";
     }
     else if (tp == 4)
     {
-        name = "Android";
+        this->name = "Android";
     }
     else if (tp == 5)
     {
-        name = "Ciborg";
+        this->name = "Ciborg";
     }
     else if (tp == 6)
     {
-        name = "I.A";
+        this->name = "I.A";
     }
     else if (tp == 7)
     {
-        name = "Alien";
+        this->name = "Alien";
     }
     else if (tp == 8)
     {
-        name = "Metamorfo";
+        this->name = "Metamorfo";
     }
     else if (tp == 9)
     {
-        name = "Jumpers";
+        this->name = "Jumpers";
+    }
+    else if (tp == 10)
+    {
+        this->name = "Kleber";
     }
 }
 
