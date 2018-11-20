@@ -1,3 +1,4 @@
+/* codigo exemplo para criar json */
 #include <iostream>
 #include <fstream>
 #include <jsoncpp/json/json.h>
@@ -7,9 +8,8 @@ using namespace std;
 int main(void) {
 
     char meuArray[] = "nomeplayer";
-    //std::ofstream arquivo;
-    std::FILE *arquivo = std::fopen("newfile.json", "a");
-    //arquivo.open("newfile.json");
+    ofstream arquivo;
+    arquivo.open("newfile.json");
 
     Json::Value Player;
     Json::Value Habilidades;
@@ -19,7 +19,8 @@ int main(void) {
     Player["Player"]["Nome"] = "nomedoplayer";
     Player["Player"]["Habilidades"] = Habilidades;
 
-    std::fwrite(&Player, sizeof(Json::Value), sizeof(Player), arquivo);
+    arquivo << Player;
+    // std::fwrite(&Player, sizeof(Json::Value), sizeof(Player), arquivo);
     std::cout << Player << std::endl;
     //arquivo.close();
 
