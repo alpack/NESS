@@ -5,7 +5,7 @@
 class Race
 {
   public:
-    std::string name;
+    std::string raceName;
     int setRace(int tp);
 };
 
@@ -14,43 +14,43 @@ int Race::setRace(int tp)
 
     if (tp == 1)
     {
-        this->name = "Humano";
+        this->raceName = "Humano";
     }
     else if (tp == 2)
     {
-        this->name = "Tron";
+        this->raceName = "Tron";
     }
     else if (tp == 3)
     {
-        this->name = "Automato";
+        this->raceName = "Automato";
     }
     else if (tp == 4)
     {
-        this->name = "Android";
+        this->raceName = "Android";
     }
     else if (tp == 5)
     {
-        this->name = "Ciborg";
+        this->raceName = "Ciborg";
     }
     else if (tp == 6)
     {
-        this->name = "I.A";
+        this->raceName = "I.A";
     }
     else if (tp == 7)
     {
-        this->name = "Alien";
+        this->raceName = "Alien";
     }
     else if (tp == 8)
     {
-        this->name = "Metamorfo";
+        this->raceName = "Metamorfo";
     }
     else if (tp == 9)
     {
-        this->name = "Jumpers";
+        this->raceName = "Jumpers";
     }
     else if (tp == 10)
     {
-        this->name = "Kleber";
+        this->raceName = "Kleber";
     }
 }
 
