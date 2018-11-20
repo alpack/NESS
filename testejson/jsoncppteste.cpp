@@ -7,21 +7,30 @@ using namespace std;
 int main(void) {
 
     char meuArray[] = "nomeplayer";
+    //std::ofstream arquivo;
     std::FILE *arquivo = std::fopen("newfile.json", "a");
-    // std::ofstream filename;
+    //arquivo.open("newfile.json");
 
-    Json::Value event;
-    Json::Value vec(Json::arrayValue);
-    vec.append(Json::Value(1));
-    vec.append(Json::Value(2));
-    vec.append(Json::Value(3));
+    Json::Value Player;
+    Json::Value Habilidades;
 
-    event["player"]["id"] = meuArray;
-    event["player"]["habilidades"]["arduino"] = 5;
-    event["player"]["habilidades"]["phs"] = 3;
+    Habilidades["arduino"] = 3;
+    Habilidades["photoshop"] = 5;
+    Player["Player"]["Nome"] = "nomedoplayer";
+    Player["Player"]["Habilidades"] = Habilidades;
 
-    std::fwrite(event, sizeof(vec), vec.size(), arquivo);
-    std::cout << event << std::endl;
+    std::fwrite(&Player, sizeof(Json::Value), sizeof(Player), arquivo);
+    std::cout << Player << std::endl;
+    //arquivo.close();
 
     return 0;
 }
+
+/*
+void main() {
+  std::ofstream file_id;
+  op_file_id.open("file.txt");
+  Json::Value value_obj; //populate 'value_obj' with the objects, arrays etc. Json::StyledWriter styledWriter; file_id << styledWriter.write(value_obj);
+  file_id.close();
+}
+*/
