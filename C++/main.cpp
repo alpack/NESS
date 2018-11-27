@@ -38,6 +38,5 @@ int main()
 
     user1->imp();
 
-    
-    return 0;
+        return 0;
 }
