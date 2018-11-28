@@ -1,7 +1,11 @@
 {
-	"Habilidades": {
-		"arduino": 3,
-		"photoshop": 5
-	},
-	"Nome": "pedro"
+	"User1": {
+		"Nome": "pedro",
+		"Email": "phjfg@cesar.school",
+		"Classe": "Kleber",
+		"Habilidades": {
+			"arduino": 3,
+			"photoshop": 5
+		}
+	}
 }

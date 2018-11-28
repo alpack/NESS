@@ -1,11 +1,37 @@
 {
-    "Habilidades": {
-        "arduino": 8,
-        "photoshop": 5,
-        "python": 3
-    },
-    "Nome": "pedro",
-    "Classe": "Kleber",
-    "Descricao": "Oi eu sou um dev",
-    "Email": "phjfg@cesar.school"
+    "Users": [
+        {
+            "User1": {
+                "Nome": "pedro",
+                "Email": "phjfg@cesar.school",
+                "Classe": "Kleber",
+                "Habilidades": {
+                    "arduino": 3,
+                    "photoshop": 5
+                }
+            }
+        },
+        {
+            "User2": {
+                "Nome": "Reis0",
+                "Descricao": "Chines",
+                "Classe": "Gines",
+                "Habilidades": {
+                    "Chines": 1000,
+                    "Comunista": 1000
+                }
+            }
+        },
+        {
+            "User3": {
+                "Nome": "Leo",
+                "Descricao": "papapa",
+                "Classe": "",
+                "Habilidades": {
+                    "Lindo": 1000,
+                    "Gostoso": 1000
+                }
+            }
+        }
+    ]
 }
