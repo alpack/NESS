@@ -1,0 +1,20 @@
+{
+    "projectName": "nessampgql",
+    "projectPath": "/home/cbmelo/alpack/reference/ness-amp-gql",
+    "defaultEditor": "code",
+    "frontendHandler": {
+        "javascript": "/home/cbmelo/.nvm/versions/node/v11.1.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "react",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "build",
+            "BuildCommand": "npm run-script build",
+            "StartCommand": "npm run-script start"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/home/cbmelo/.nvm/versions/node/v11.1.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}

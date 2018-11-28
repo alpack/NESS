@@ -1,9 +1,0 @@
-{
-    "bucketName": "nessserverless6dbcd64ff0484ea482221079014027fa",
-    "authPolicyName": "s3_amplify_0168653a",
-    "unauthPolicyName": "s3_amplify_0168653a",
-    "authRoleName": "nessserverless-20181119151616-authRole",
-    "unauthRoleName": "nessserverless-20181119151616-unauthRole",
-    "authPermissions": "rw",
-    "unauthPermissions": ""
-}
