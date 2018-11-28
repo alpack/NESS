@@ -1,0 +1,15 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "nessserverless-20181119151616-authRole",
+            "UnauthRoleArn": "arn:aws:iam::582223494038:role/nessserverless-20181119151616-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::582223494038:role/nessserverless-20181119151616-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "nessserverless-20181119151616-deployment",
+            "UnauthRoleName": "nessserverless-20181119151616-unauthRole",
+            "StackName": "nessserverless-20181119151616",
+            "StackId": "arn:aws:cloudformation:us-east-1:582223494038:stack/nessserverless-20181119151616/34f0b4f0-ec27-11e8-a3fa-500c28604cae"
+        }
+    },
+    "publish-ignore": []
+}

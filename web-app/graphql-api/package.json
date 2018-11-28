@@ -1,0 +1,35 @@
+{
+  "name": "ness-gql-api",
+  "version": "0.0.1",
+  "description": "ness api using graphql",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodejs-dashboard babel-watch server.js",
+    "build": "babel server.js -d dist/ && babel ness-url.js -d dist && babel helpers -d dist/helpers && babel graphql-utils -d dist/graphql-utils",
+    "start": "node dist/server.js"
+  },
+  "keywords": [
+    "GraphQL",
+    "NodeJs",
+    "JavaScript"
+  ],
+  "author": "André Gomes",
+  "license": "MIT",
+  "ENV": "DEV",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "graphql-yoga": "^1.4.3",
+    "node-fetch": "^2.1.1",
+    "node-schedule": "^1.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-watch": "^2.0.7",
+    "morgan": "^1.9.0",
+    "nodejs-dashboard": "^0.4.3"
+  }
+}
