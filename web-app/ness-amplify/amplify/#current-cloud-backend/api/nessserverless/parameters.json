@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "nessserverless",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognito935cd279",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "schemaGraphql": "s3://nessserverless-20181119151616-deployment/amplify-appsync-files/schema.graphql.1542652343190",
+    "ResolverBucket": "nessserverless-20181119151616-deployment",
+    "ResolverRootKey": "amplify-appsync-files",
+    "DeploymentTimestamp": "1542652343190"
+}
