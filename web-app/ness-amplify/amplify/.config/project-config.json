@@ -1,0 +1,20 @@
+{
+    "projectName": "nessserverless",
+    "projectPath": "/home/cbmelo/NESS/ness-serverless",
+    "defaultEditor": "code",
+    "frontendHandler": {
+        "javascript": "/home/cbmelo/.nvm/versions/node/v11.1.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "vue",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "dist",
+            "BuildCommand": "npm run-script build",
+            "StartCommand": "npm run-script serve"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/home/cbmelo/.nvm/versions/node/v11.1.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}
