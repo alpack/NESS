@@ -1,0 +1,88 @@
+schema {
+	query: Query
+	mutation: Mutation
+	subscription: Subscription
+}
+
+type Query {
+	getMyInfo(consumer_key: String, consumer_secret: String): User!
+	getUserInfo(handle: String!, consumer_key: String, consumer_secret: String): User!
+	searchAllAvatarsByKeyword(keyword: String!): AvatarConnection
+}
+
+type Mutation {
+	# Create a avatar for a user
+	createAvatar(
+		name: String!,
+		consumer_key: String,
+		consumer_secret: String,
+		access_token_key: String,
+		access_token_secret: String,
+		created_at: String!
+	): Avatar!
+
+	# Delete User Avatar
+	deleteAvatar(
+	    avatar_id: String!,
+	    consumer_key: String,
+        consumer_secret: String,
+        access_token_key: String,
+        access_token_secret: String
+    ): Avatar!
+
+	# Update existing Avatar
+	updateAvatar(
+		avatar_id: String!, 
+		name: String!
+	): Avatar!
+
+    # Create user info is available in dynamo integration
+	updateUserInfo(
+		location: String!,
+		description: String!,
+		name: String!,
+		skills_count: Int!,
+		mission_count: Int!,
+		favourites_count: Int!,
+		skills: [String!]!
+	): User!
+}
+
+type Subscription {
+	addAvatar: Avatar
+		@aws_subscribe(mutations: ["createAvatar"])
+}
+
+type Accessories{
+	item_id: String!
+}
+
+type Avatar {
+	avatar_id: String!
+	avatar_name: String!
+	reavatared: Boolean
+	reavatar_count: Int
+	favorited: Boolean
+	created_at: String!
+}
+
+type AvatarConnection {
+	items: [Avatar!]!
+	nextToken: String
+}
+
+type User {
+	name: String!
+	handle: String!
+	location: String!
+	description: String!
+	skills_count: Int!
+	mission_count: Int!
+	favourites_count: Int!
+	skills: [String!]!
+	topAvatar: Avatar
+	avatars(limit: Int!, nextToken: String): AvatarConnection
+
+	# search functionality is available in elasticsearch integration
+    searchAvatarsByKeyword(keyword: String!): AvatarConnection
+}

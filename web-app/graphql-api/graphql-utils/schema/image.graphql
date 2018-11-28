@@ -1,0 +1,9 @@
+type Image {
+    full: String!
+    group: String!
+    sprite: String!
+    height: Int!
+    width: Int!
+    y: Int!
+    x: Int!
+}

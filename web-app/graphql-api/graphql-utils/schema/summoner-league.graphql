@@ -1,0 +1,16 @@
+# import League from './league-interface.graphql'
+# import MiniSeries from './league-interface.graphql'
+# import Leagues from from './league.graphql' 
+
+type summonerLeague implements League {
+    playerOrTeamId: Int!
+    playerOrTeamName: String!
+    inactive: Boolean
+    tier: String!
+    rank: String!
+    leagueId: String!
+    leagueName: String!
+    leaguePoints: Int!
+    currentLeague: Leagues!
+    questsComplete: Int!
+}

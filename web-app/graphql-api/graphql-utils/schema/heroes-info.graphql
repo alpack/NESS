@@ -1,0 +1,56 @@
+# import Image from './image.graphql'
+
+type HeroesInfo {
+    key: String!
+    id: ID!
+    name: String!
+    image: Image!
+    badges: [String!]!
+    lore: String!
+    class: HeroClass!
+    race: [HeroRace!]!
+    stats: HeroStats!
+    passive: HeroPassive!
+    spells: HeroSpells!
+}
+
+type HeroClass {
+    id: ID!
+    name: String!
+    num: Int!
+}
+
+type HeroRace {
+    difficulty: Int!
+    defense: Int!
+    magic: Int!
+    attack: Int!
+}
+
+type HeroStats {
+    expperlevel: Int!
+    exp: Int!
+    mpperlevel: Int!
+    mp: Int!
+    mpregenperlevel: Int!
+    mpregen: Int!
+    hpperlevel: Int!
+    hp: Int!
+    hpregenperlevel: Int!
+    hpregen: Int!
+}
+
+type HeroPassive {
+    name: String!
+    image: Image!
+    description: String!
+}
+
+type HeroSpells {
+    key: String!
+    name: String!
+    image: Image!
+    rank: Int!
+    tooltip: String!
+    description: String!
+}

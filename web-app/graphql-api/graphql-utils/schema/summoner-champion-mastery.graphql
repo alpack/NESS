@@ -1,0 +1,13 @@
+# import Heroes from './heroes.graphql'
+
+type HeroMastery {
+    playerId: ID!
+    hero: Heroes!
+    heroLevel: Int!
+    heroExp: Int!
+    heroExpSinceLastLevel: Int!
+    heroExpUntilNextLevel: Int!
+    tokensEarned: Int!
+    lastPlayTime: Int!
+    chestGranted: Boolean!
+}

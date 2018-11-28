@@ -1,0 +1,15 @@
+# import Quests from "./quests.graphql"
+# import Spectator from './spectator.graphql'
+# import HeroMastery from './summoner-champion-mastery.graphql'
+# import SumLeague from './summoner-league.graphql'
+
+type Summoner {
+    id: ID! 
+    name: String!
+    accountId: ID! 
+    profileIconId: ID!
+    summonerLevel: Int!
+    quests(start: Int, end: Int): Quests
+    heroMastery: [HeroMastery]!
+    sumLeague: [SumLeague]!
+}

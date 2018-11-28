@@ -1,0 +1,9 @@
+# import Summoner from './summoner.graphql'
+# import Quests from './quests.graphql'
+# import Quest from './quest.graphql'
+
+type Query {
+    summoner(name: String!): Summoner!
+    quests(summoner_id: ID!, recent: Boolean!, start: Int, end: Int): Quests
+    quest(game_id: ID!): Quest!
+}

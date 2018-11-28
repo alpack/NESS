@@ -1,0 +1,8 @@
+# import HeroesInfo from './heroes-info.graphql'
+
+type Heroes {
+    id: ID!
+    active: Boolean!
+    freeToJoin: Boolean!
+    heroesInfo: HeroesInfo!
+}
