@@ -1,0 +1,45 @@
+type Account @model {
+  id: ID!
+  name: String!
+  lastLogin: AWSTimestamp!
+  hero: Hero @connection(name: "HeroAccount")
+}
+
+type Hero @model {
+  id: ID!
+  account: Account @connection(name: "HeroAccount")
+  name: String!
+  image: Image
+  online: Boolean
+  level: Int
+  exp: Float
+  title: String
+  race: Race
+  lore: String
+  skills: [Skill]
+}
+
+type Image @model {
+  id: ID!
+  bucket: String!
+  fullsize: ImageS3Info!
+  thumbnail: ImageS3Info!
+}
+
+type ImageS3Info {
+  key: String!
+  width: Int!
+  height: Int!
+}
+
+type Race @model {
+  id: ID!
+  name: String
+  description: String
+}
+
+type Skill {
+  id: ID!
+  rank: Int!
+  description: String!
+}

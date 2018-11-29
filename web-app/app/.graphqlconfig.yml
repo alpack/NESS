@@ -1,0 +1,16 @@
+projects:
+  NessWebApp:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        graphQLApiId: d3pgrxmccvhixkj5qpqwwppwca
+      endpoints:
+        prod: >-
+          https://aodfh5bp5bbnzhswapsbs6ga5m.appsync-api.us-east-1.amazonaws.com/graphql
