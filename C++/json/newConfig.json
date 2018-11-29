@@ -1,0 +1,97 @@
+{
+    "Users": [
+        {
+            "User1": {
+                "Nome": "pedro",
+                "Email": "phjfg@cesar.school",
+                "Classe": "Kleber",
+                "Habilidades": {
+                    "arduino": 3,
+                    "photoshop": 5
+                }
+            }
+        },
+        {
+            "User2": {
+                "Nome": "Reis0",
+                "Descricao": "Chines",
+                "Classe": "Gines",
+                "Habilidades": {
+                    "Chines": 1000,
+                    "Comunista": 1000
+                }
+            }
+        },
+        {
+            "User3": {
+                "Nome": "Leo",
+                "Descricao": "papapa",
+                "Classe": "",
+                "Habilidades": {
+                    "Lindo": 1000,
+                    "Gostoso": 1000
+                }
+            }
+        },
+        {
+            "User4": {
+                "Classe": "Kleber",
+                "Descricao": "",
+                "Habilidades": {
+                    "Arduino": 9
+                },
+                "Nome": "Pedro"
+            }
+        },
+        {
+            "User5": {
+                "Classe": "Jumpers",
+                "Descricao": "",
+                "Habilidades": {
+                    "Photoshop": 10
+                },
+                "Nome": "leleco"
+            }
+        },
+        {
+            "User5": {
+                "Classe": "Jumpers",
+                "Descricao": "",
+                "Habilidades": {
+                    "Embarcados": 7
+                },
+                "Nome": "VELPER"
+            }
+        },
+        {
+            "User5": {
+                "Classe": "Metamorfo",
+                "Descricao": "",
+                "Habilidades": {
+                    "po": 8
+                },
+                "Nome": "pa"
+            }
+        },
+        {
+            "User5": {
+                "Classe": "Jumpers",
+                "Descricao": "",
+                "Habilidades": {
+                    "inivisivel": 1000
+                },
+                "Nome": "ceci"
+            }
+        },
+        {
+            "User5": {
+                "Classe": "Kleber",
+                "Descricao": "",
+                "Habilidades": {
+                    "Lindo": 10
+                },
+                "Nome": "Kleber"
+            }
+        }
+    ]
+}

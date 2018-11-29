@@ -11,10 +11,11 @@ class Users : public Race, public Skills
     Users(std::string name, std::string password, std::string email, int phoneNumber);
     void imp();
     std::string description;
-  private:
-    std::string password;
     std::string name;
     std::string email;
+  private:
+    std::string password;
+    
     int telefone;
 };
 

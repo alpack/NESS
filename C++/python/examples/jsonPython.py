@@ -2,9 +2,9 @@ import json
 import os
 
 cwd = os.getcwd()
-jsonPath = '%s/%s' % (cwd, 'config.json')
-json2Path = '%s/%s' % (cwd, 'config2.json')
-json3Path = '%s/%s' % (cwd, 'config3.json')
+jsonPath = '%s/%s' % (cwd, '../../json/config.json')
+jsonPath2 = '%s/%s' % (cwd, '../../json/config2.json')
+jsonPath3 = '%s/%s' % (cwd, '../../json/config3.json')
 
 properties = {}
 properties2 = {}
@@ -18,29 +18,29 @@ except IOError as e:
     print(e)
     print('IOError: unable to open config.json')
     exit(1)
- 
+
 try:
-    with open(json2Path) as data_file:
+    with open(jsonPath2) as data_file:
         properties2 = json.load(data_file)
 
 except IOError as e:
     print(e)
-    print('IOError: unable to open config2.json')
+    print('IOError: unable to open config.json')
     exit(1)
 
 try:
-    with open(json3Path) as data_file:
+    with open(jsonPath3) as data_file:
         properties3 = json.load(data_file)
 
 except IOError as e:
     print(e)
-    print('IOError: unable to open config3.json')
+    print('IOError: unable to open config.json')
     exit(1)
 
 final = {}
+final['Users'] = (properties, properties2, properties3)
 
-final['Users'] = (properties,properties2,properties3)
+print(final)
 
-
-with open('newConfig.json', 'w') as fp:
+with open('../../json/newConfig.json', 'w') as fp:
     json.dump(final, fp, indent=4)
