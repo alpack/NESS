@@ -1,4 +1,4 @@
 #!/bin/bash
 
 ./main.out 
-python3 ./python/usersJson.py
+python3 ./python/insertJson.py

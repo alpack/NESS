@@ -5,13 +5,13 @@ cwd = os.getcwd()
 jsonPath = '%s/%s' % (cwd, '/json/newConfig.json')
 jsonPath2 = '%s/%s' % (cwd, '/json/user.json')
 
-properties = {}
-properties2 = {}
+jsonfile = {}
+jsonfile2 = {}
 
 
 try:
     with open(jsonPath) as data_file:
-        properties = json.load(data_file)
+        jsonfile = json.load(data_file)
 
 except IOError as e:
     print(e)
@@ -20,21 +20,21 @@ except IOError as e:
 
 try:
     with open(jsonPath2) as data_file:
-        properties2 = json.load(data_file)
+        jsonfile2 = json.load(data_file)
 
 except IOError as e:
     print(e)
     print('IOError: unable to open user.json')
     exit(1)
 
-properties = properties['Users']
-properties.append(properties2)
+jsonfile = jsonfile['Users']
+jsonfile.append(jsonfile2)
 
-print(properties)
+print(jsonfile)
 final = {}
-final['Users'] = properties
-
-print(final)
+final['Users'] = jsonfile
 
 with open('json/newConfig.json', 'w') as fp:
     json.dump(final, fp, indent=4)
+
+

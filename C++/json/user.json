@@ -1,12 +1,12 @@
 {
-	"User5" : 
+	"User12" : 
 	{
-		"Classe" : "Kleber",
+		"Classe" : "Jumpers",
 		"Descricao" : "",
 		"Habilidades" : 
 		{
-			"Lindo" : 10
+			"Teste" : 10
 		},
-		"Nome" : "Kleber"
+		"Nome" : "TesteId"
 	}
 }

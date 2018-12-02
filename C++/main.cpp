@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    string name, senha, email, skillName;
+    string name, senha, email, skillName, id ;
     int skillLevel, phoneNumber, choice, skill;
     Users *user1;
 
@@ -43,11 +43,15 @@ int main()
         user1->skill_level = skillLevel;
     }
 
+    cout << "Id do ususário:";
+    cin >> id;
+
+
     Habilidades[user1->skill_name] = skillLevel;
-    Player["User5"]["Habilidades"] = Habilidades;
-    Player["User5"]["Classe"] = user1->raceName;
-    Player["User5"]["Descricao"] = "";
-    Player["User5"]["Nome"] = user1->name;
+    Player["User" + id]["Habilidades"] = Habilidades;
+    Player["User" + id]["Classe"] = user1->raceName;
+    Player["User" + id]["Descricao"] = "";
+    Player["User" + id]["Nome"] = user1->name;
 
     arquivo << Player;
 

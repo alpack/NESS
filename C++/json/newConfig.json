@@ -54,7 +54,7 @@
             }
         },
         {
-            "User5": {
+            "User6": {
                 "Classe": "Jumpers",
                 "Descricao": "",
                 "Habilidades": {
@@ -64,7 +64,7 @@
             }
         },
         {
-            "User5": {
+            "User7": {
                 "Classe": "Metamorfo",
                 "Descricao": "",
                 "Habilidades": {
@@ -74,7 +74,7 @@
             }
         },
         {
-            "User5": {
+            "User8": {
                 "Classe": "Jumpers",
                 "Descricao": "",
                 "Habilidades": {
@@ -84,13 +84,43 @@
             }
         },
         {
-            "User5": {
+            "User9": {
                 "Classe": "Kleber",
                 "Descricao": "",
                 "Habilidades": {
                     "Lindo": 10
                 },
                 "Nome": "Kleber"
+            }
+        },
+        {
+            "User10": {
+                "Classe": "Ciborg",
+                "Descricao": "",
+                "Habilidades": {
+                    "python3": 8
+                },
+                "Nome": "Pedro"
+            }
+        },
+        {
+            "User11": {
+                "Classe": "Kleber",
+                "Descricao": "",
+                "Habilidades": {
+                    "Photoshop": 10
+                },
+                "Nome": "Pedro"
+            }
+        },
+        {
+            "User12": {
+                "Classe": "Jumpers",
+                "Descricao": "",
+                "Habilidades": {
+                    "Teste": 10
+                },
+                "Nome": "TesteId"
             }
         }
     ]
