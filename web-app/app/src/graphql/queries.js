@@ -14,11 +14,6 @@ export const getAccount = `query GetAccount($id: ID!) {
       exp
       title
       lore
-      skills {
-        id
-        rank
-        description
-      }
     }
   }
 }
@@ -41,11 +36,6 @@ export const listAccounts = `query ListAccounts(
         exp
         title
         lore
-        skills {
-          id
-          rank
-          description
-        }
       }
     }
     nextToken

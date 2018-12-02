@@ -14,11 +14,6 @@ export const createAccount = `mutation CreateAccount($input: CreateAccountInput!
       exp
       title
       lore
-      skills {
-        id
-        rank
-        description
-      }
     }
   }
 }
@@ -36,11 +31,6 @@ export const updateAccount = `mutation UpdateAccount($input: UpdateAccountInput!
       exp
       title
       lore
-      skills {
-        id
-        rank
-        description
-      }
     }
   }
 }
@@ -58,11 +48,6 @@ export const deleteAccount = `mutation DeleteAccount($input: DeleteAccountInput!
       exp
       title
       lore
-      skills {
-        id
-        rank
-        description
-      }
     }
   }
 }

@@ -1,7 +1,7 @@
 type Account {
   id: ID!
   name: String!
-  lastLogin: AWSTimestamp!
+  lastLogin: AWSTimestamp
   hero: Hero
 }
 
@@ -9,14 +9,14 @@ type Hero {
   id: ID!
   account: Account
   name: String!
-  image: Image
-  online: Boolean
-  level: Int
-  exp: Float
-  title: String
-  race: Race
-  lore: String
-  skills: [Skill]
+  image: Image!
+  online: Boolean!
+  level: Int!
+  exp: Float!
+  title: String!
+  race: Race!
+  lore: String!
+  skills: [Skill!]!
 }
 
 type Image {
@@ -34,8 +34,8 @@ type ImageS3Info {
 
 type Race {
   id: ID!
-  name: String
-  description: String
+  name: String!
+  description: String!
 }
 
 type Skill {
@@ -132,7 +132,7 @@ type Query {
 input CreateAccountInput {
   id: ID
   name: String!
-  lastLogin: AWSTimestamp!
+  lastLogin: AWSTimestamp
   accountHeroId: ID
 }
 
@@ -203,12 +203,12 @@ input ModelHeroFilterInput {
 input CreateHeroInput {
   id: ID
   name: String!
-  online: Boolean
-  level: Int
-  exp: Float
-  title: String
-  lore: String
-  skills: [SkillInput]
+  online: Boolean!
+  level: Int!
+  exp: Float!
+  title: String!
+  lore: String!
+  skills: [SkillInput!]!
   heroAccountId: ID
 }
 
@@ -220,7 +220,7 @@ input UpdateHeroInput {
   exp: Float
   title: String
   lore: String
-  skills: [SkillInput]
+  skills: [SkillInput!]
   heroAccountId: ID
 }
 
@@ -281,8 +281,8 @@ input ModelRaceFilterInput {
 
 input CreateRaceInput {
   id: ID
-  name: String
-  description: String
+  name: String!
+  description: String!
 }
 
 input UpdateRaceInput {

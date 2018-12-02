@@ -14,11 +14,6 @@ export const onCreateAccount = `subscription OnCreateAccount {
       exp
       title
       lore
-      skills {
-        id
-        rank
-        description
-      }
     }
   }
 }
@@ -36,11 +31,6 @@ export const onUpdateAccount = `subscription OnUpdateAccount {
       exp
       title
       lore
-      skills {
-        id
-        rank
-        description
-      }
     }
   }
 }
@@ -58,11 +48,6 @@ export const onDeleteAccount = `subscription OnDeleteAccount {
       exp
       title
       lore
-      skills {
-        id
-        rank
-        description
-      }
     }
   }
 }

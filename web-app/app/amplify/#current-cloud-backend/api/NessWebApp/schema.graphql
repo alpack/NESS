@@ -1,7 +1,7 @@
 type Account @model {
   id: ID!
   name: String!
-  lastLogin: AWSTimestamp!
+  lastLogin: AWSTimestamp
   hero: Hero @connection(name: "HeroAccount")
 }
 
@@ -9,14 +9,14 @@ type Hero @model {
   id: ID!
   account: Account @connection(name: "HeroAccount")
   name: String!
-  image: Image
-  online: Boolean
-  level: Int
-  exp: Float
-  title: String
-  race: Race
-  lore: String
-  skills: [Skill]
+  image: Image!
+  online: Boolean!
+  level: Int!
+  exp: Float!
+  title: String!
+  race: Race!
+  lore: String!
+  skills: [Skill!]!
 }
 
 type Image @model {
@@ -34,8 +34,8 @@ type ImageS3Info {
 
 type Race @model {
   id: ID!
-  name: String
-  description: String
+  name: String!
+  description: String!
 }
 
 type Skill {
