@@ -1,24 +1,35 @@
+// import React from 'react';
+// import './App.css';
+
+// import Amplify from 'aws-amplify';
+// import { withAuthenticator } from 'aws-amplify-react';
+// import aws_exports from './aws-exports';
+
+// // import HerosListLoader from './components/allHeros';
+// import { Connect } from 'aws-amplify-react';
+// import { graphqlOperation }  from 'aws-amplify';
+// import { Grid, Header, Input, List, Segment } from 'semantic-ui-react';
+
 import React, { Component } from 'react';
 import './App.css';
 
-import { Grid } from 'semantic-ui-react';
-import { AlbumsListLoader } from './components/allQuests';
-
-import Amplify from 'aws-amplify';
-import { withAuthenticator } from 'aws-amplify-react';
 import aws_exports from './aws-exports';
+import { withAuthenticator } from 'aws-amplify-react';
+import Amplify from 'aws-amplify';
+
+import { Grid } from 'semantic-ui-react';
+import HerosListLoader from './components/allHeros';
+
 Amplify.configure(aws_exports);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
         <Grid padded>
-          <Grid.Column>
-            <AlbumsListLoader />
-          </Grid.Column>
+            <Grid.Column>
+                <HerosListLoader />
+            </Grid.Column>
         </Grid>
-      </div>
     );
   }
 }

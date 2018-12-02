@@ -1,4 +1,4 @@
 {
-    "useProfile": true,
-    "profileName": "ness-webapp"
+    "useProfile": false,
+    "awsConfigFilePath": "/Users/cbmelo/.amplify/awscloudformation/OV00lk6OSC"
 }

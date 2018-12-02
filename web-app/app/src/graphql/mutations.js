@@ -5,15 +5,19 @@ export const createAccount = `mutation CreateAccount($input: CreateAccountInput!
   createAccount(input: $input) {
     id
     name
+    owner
     lastLogin
-    hero {
-      id
-      name
-      online
-      level
-      exp
-      title
-      lore
+    heroes {
+      items {
+        id
+        name
+        online
+        level
+        exp
+        title
+        lore
+      }
+      nextToken
     }
   }
 }
@@ -22,15 +26,19 @@ export const updateAccount = `mutation UpdateAccount($input: UpdateAccountInput!
   updateAccount(input: $input) {
     id
     name
+    owner
     lastLogin
-    hero {
-      id
-      name
-      online
-      level
-      exp
-      title
-      lore
+    heroes {
+      items {
+        id
+        name
+        online
+        level
+        exp
+        title
+        lore
+      }
+      nextToken
     }
   }
 }
@@ -39,15 +47,19 @@ export const deleteAccount = `mutation DeleteAccount($input: DeleteAccountInput!
   deleteAccount(input: $input) {
     id
     name
+    owner
     lastLogin
-    hero {
-      id
-      name
-      online
-      level
-      exp
-      title
-      lore
+    heroes {
+      items {
+        id
+        name
+        online
+        level
+        exp
+        title
+        lore
+      }
+      nextToken
     }
   }
 }
@@ -58,6 +70,7 @@ export const createHero = `mutation CreateHero($input: CreateHeroInput!) {
     account {
       id
       name
+      owner
       lastLogin
     }
     name
@@ -89,6 +102,7 @@ export const updateHero = `mutation UpdateHero($input: UpdateHeroInput!) {
     account {
       id
       name
+      owner
       lastLogin
     }
     name
@@ -120,6 +134,7 @@ export const deleteHero = `mutation DeleteHero($input: DeleteHeroInput!) {
     account {
       id
       name
+      owner
       lastLogin
     }
     name

@@ -19,7 +19,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/app-20181129140645-deployment/amplify-cfn-templates/auth/cognito94091354-cloudformation-template.yml",
 				"logicalId": "authcognito94091354"
 			},
-			"lastPushTimeStamp": "2018-11-30T17:38:37.107Z",
+			"lastPushTimeStamp": "2018-12-02T13:18:15.308Z",
 			"output": {
 				"AppClientSecret": "gb0620n4n0g5dd5a332gj87neefoa5009op4vj72kls32sjher5",
 				"UserPoolId": "us-east-1_bkOJGuIZp",
@@ -49,8 +49,8 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/app-20181129140645-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apiNessWebApp"
 			},
-			"lastPushTimeStamp": "2018-11-30T17:38:39.996Z",
-			"lastPushDirHash": "lRuquzSValm56Y6VDlkRAkWCk2I="
+			"lastPushTimeStamp": "2018-12-02T13:18:16.956Z",
+			"lastPushDirHash": "OTLDaBkPrJGL+pmOVVT5HeZfikI="
 		}
 	}
 }

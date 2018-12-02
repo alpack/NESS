@@ -738,6 +738,10 @@
                     {
                         "AttributeName": "id",
                         "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "heroAccountId",
+                        "AttributeType": "S"
                     }
                 ],
                 "ProvisionedThroughput": {
@@ -750,7 +754,29 @@
                 },
                 "StreamSpecification": {
                     "StreamViewType": "NEW_AND_OLD_IMAGES"
-                }
+                },
+                "GlobalSecondaryIndexes": [
+                    {
+                        "IndexName": "gsi-AccountHeroes",
+                        "KeySchema": [
+                            {
+                                "AttributeName": "heroAccountId",
+                                "KeyType": "HASH"
+                            }
+                        ],
+                        "Projection": {
+                            "ProjectionType": "ALL"
+                        },
+                        "ProvisionedThroughput": {
+                            "ReadCapacityUnits": {
+                                "Ref": "DynamoDBModelTableReadIOPS"
+                            },
+                            "WriteCapacityUnits": {
+                                "Ref": "DynamoDBModelTableWriteIOPS"
+                            }
+                        }
+                    }
+                ]
             }
         },
         "HeroIAMRole": {
@@ -2511,7 +2537,7 @@
             },
             "DependsOn": "GraphQLSchema"
         },
-        "AccountheroResolver": {
+        "AccountheroesResolver": {
             "Type": "AWS::AppSync::Resolver",
             "Properties": {
                 "ApiId": {
@@ -2526,7 +2552,7 @@
                         "Name"
                     ]
                 },
-                "FieldName": "hero",
+                "FieldName": "heroes",
                 "TypeName": "Account",
                 "RequestMappingTemplateS3Location": {
                     "Fn::Join": [
@@ -2548,7 +2574,7 @@
                                                 ".",
                                                 [
                                                     "Account",
-                                                    "hero",
+                                                    "heroes",
                                                     "request",
                                                     {
                                                         "Ref": "DeploymentTimestamp"
@@ -2582,7 +2608,7 @@
                                                 ".",
                                                 [
                                                     "Account",
-                                                    "hero",
+                                                    "heroes",
                                                     "response",
                                                     {
                                                         "Ref": "DeploymentTimestamp"

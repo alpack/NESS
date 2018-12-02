@@ -1,8 +1,9 @@
 type Account {
   id: ID!
   name: String!
+  owner: String!
   lastLogin: AWSTimestamp
-  hero: Hero
+  heroes(filter: ModelHeroFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelHeroConnection
 }
 
 type Hero {
@@ -112,6 +113,7 @@ input ModelBooleanFilterInput {
 input ModelAccountFilterInput {
   id: ModelIDFilterInput
   name: ModelStringFilterInput
+  owner: ModelStringFilterInput
   lastLogin: ModelIntFilterInput
   and: [ModelAccountFilterInput]
   or: [ModelAccountFilterInput]
@@ -132,15 +134,15 @@ type Query {
 input CreateAccountInput {
   id: ID
   name: String!
+  owner: String!
   lastLogin: AWSTimestamp
-  accountHeroId: ID
 }
 
 input UpdateAccountInput {
   id: ID!
   name: String
+  owner: String
   lastLogin: AWSTimestamp
-  accountHeroId: ID
 }
 
 input DeleteAccountInput {

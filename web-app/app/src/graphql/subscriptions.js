@@ -5,15 +5,19 @@ export const onCreateAccount = `subscription OnCreateAccount {
   onCreateAccount {
     id
     name
+    owner
     lastLogin
-    hero {
-      id
-      name
-      online
-      level
-      exp
-      title
-      lore
+    heroes {
+      items {
+        id
+        name
+        online
+        level
+        exp
+        title
+        lore
+      }
+      nextToken
     }
   }
 }
@@ -22,15 +26,19 @@ export const onUpdateAccount = `subscription OnUpdateAccount {
   onUpdateAccount {
     id
     name
+    owner
     lastLogin
-    hero {
-      id
-      name
-      online
-      level
-      exp
-      title
-      lore
+    heroes {
+      items {
+        id
+        name
+        online
+        level
+        exp
+        title
+        lore
+      }
+      nextToken
     }
   }
 }
@@ -39,15 +47,19 @@ export const onDeleteAccount = `subscription OnDeleteAccount {
   onDeleteAccount {
     id
     name
+    owner
     lastLogin
-    hero {
-      id
-      name
-      online
-      level
-      exp
-      title
-      lore
+    heroes {
+      items {
+        id
+        name
+        online
+        level
+        exp
+        title
+        lore
+      }
+      nextToken
     }
   }
 }
@@ -58,6 +70,7 @@ export const onCreateHero = `subscription OnCreateHero {
     account {
       id
       name
+      owner
       lastLogin
     }
     name
@@ -89,6 +102,7 @@ export const onUpdateHero = `subscription OnUpdateHero {
     account {
       id
       name
+      owner
       lastLogin
     }
     name
@@ -120,6 +134,7 @@ export const onDeleteHero = `subscription OnDeleteHero {
     account {
       id
       name
+      owner
       lastLogin
     }
     name

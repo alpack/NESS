@@ -5,15 +5,19 @@ export const getAccount = `query GetAccount($id: ID!) {
   getAccount(id: $id) {
     id
     name
+    owner
     lastLogin
-    hero {
-      id
-      name
-      online
-      level
-      exp
-      title
-      lore
+    heroes {
+      items {
+        id
+        name
+        online
+        level
+        exp
+        title
+        lore
+      }
+      nextToken
     }
   }
 }
@@ -27,15 +31,19 @@ export const listAccounts = `query ListAccounts(
     items {
       id
       name
+      owner
       lastLogin
-      hero {
-        id
-        name
-        online
-        level
-        exp
-        title
-        lore
+      heroes {
+        items {
+          id
+          name
+          online
+          level
+          exp
+          title
+          lore
+        }
+        nextToken
       }
     }
     nextToken
@@ -48,6 +56,7 @@ export const getHero = `query GetHero($id: ID!) {
     account {
       id
       name
+      owner
       lastLogin
     }
     name
@@ -84,6 +93,7 @@ export const listHeros = `query ListHeros(
       account {
         id
         name
+        owner
         lastLogin
       }
       name

@@ -1,13 +1,14 @@
 type Account @model {
   id: ID!
   name: String!
+  owner: String!
   lastLogin: AWSTimestamp
-  hero: Hero @connection(name: "HeroAccount")
+  heroes: [Hero] @connection(name: "AccountHeroes")
 }
 
 type Hero @model {
   id: ID!
-  account: Account @connection(name: "HeroAccount")
+  account: Account @connection(name: "AccountHeroes")
   name: String!
   image: Image!
   online: Boolean!
