@@ -31,3 +31,10 @@
         transform: rotate(360deg);
     }
 }
+
+.App-background{
+    /*background-image: url("./img/Background_NESS.jpg")*/
+    background-color: #dcdddc;
+    height: 100vh;
+    padding-top: 350px ;
+}
