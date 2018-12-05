@@ -1,5 +1,5 @@
 projects:
-  NessApplicationAPI:
+  NessUserAPI:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
@@ -10,7 +10,7 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src/graphql
-        graphQLApiId: 34e3fil34zdsfhbsrhtmem4kla
+        graphQLApiId: z5aqn7vgfzaivokjcgnsjwn6pm
       endpoints:
         prod: >-
-          https://fucgvngfcbbtjixdbxbqgeegn4.appsync-api.us-east-1.amazonaws.com/graphql
+          https://osmn6giuh5doxjiuw7ctrq5ohu.appsync-api.us-east-1.amazonaws.com/graphql

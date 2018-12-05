@@ -1,17 +1,19 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const getAccount = `query GetAccount($id: ID!) {
-  getAccount(id: $id) {
+export const getUser = `query GetUser($id: ID!) {
+  getUser(id: $id) {
     id
-    name
     owner
-    lastLogin
+    name
+    createdAt
     heroes {
       items {
         id
         name
-        online
+        createdAt
+        isOnline
+        honor
         level
         exp
         title
@@ -22,22 +24,24 @@ export const getAccount = `query GetAccount($id: ID!) {
   }
 }
 `;
-export const listAccounts = `query ListAccounts(
-  $filter: ModelAccountFilterInput
+export const listUsers = `query ListUsers(
+  $filter: ModelUserFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listAccounts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      name
       owner
-      lastLogin
+      name
+      createdAt
       heroes {
         items {
           id
           name
-          online
+          createdAt
+          isOnline
+          honor
           level
           exp
           title
@@ -53,18 +57,21 @@ export const listAccounts = `query ListAccounts(
 export const getHero = `query GetHero($id: ID!) {
   getHero(id: $id) {
     id
-    account {
+    user {
       id
-      name
       owner
-      lastLogin
+      name
+      createdAt
     }
     name
+    createdAt
     image {
-      id
       bucket
+      region
+      key
     }
-    online
+    isOnline
+    honor
     level
     exp
     title
@@ -76,6 +83,7 @@ export const getHero = `query GetHero($id: ID!) {
     lore
     skills {
       id
+      name
       rank
       description
     }
@@ -90,18 +98,21 @@ export const listHeros = `query ListHeros(
   listHeros(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      account {
+      user {
         id
-        name
         owner
-        lastLogin
+        name
+        createdAt
       }
       name
+      createdAt
       image {
-        id
         bucket
+        region
+        key
       }
-      online
+      isOnline
+      honor
       level
       exp
       title
@@ -113,6 +124,7 @@ export const listHeros = `query ListHeros(
       lore
       skills {
         id
+        name
         rank
         description
       }
@@ -121,65 +133,258 @@ export const listHeros = `query ListHeros(
   }
 }
 `;
-export const getImage = `query GetImage($id: ID!) {
-  getImage(id: $id) {
+export const getSquad = `query GetSquad($id: ID!) {
+  getSquad(id: $id) {
     id
-    bucket
-    fullsize {
-      key
-      width
-      height
-    }
-    thumbnail {
-      key
-      width
-      height
+    owner
+    name
+    createdAt
+    open
+    quests {
+      items {
+        id
+        owner
+        createdAt
+        updatedAt
+        isTaken
+        status
+        name
+        lore
+        honorReward
+      }
+      nextToken
     }
   }
 }
 `;
-export const listImages = `query ListImages(
-  $filter: ModelImageFilterInput
+export const listSquads = `query ListSquads(
+  $filter: ModelSquadFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listImages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listSquads(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      bucket
-      fullsize {
-        key
-        width
-        height
-      }
-      thumbnail {
-        key
-        width
-        height
+      owner
+      name
+      createdAt
+      open
+      quests {
+        items {
+          id
+          owner
+          createdAt
+          updatedAt
+          isTaken
+          status
+          name
+          lore
+          honorReward
+        }
+        nextToken
       }
     }
     nextToken
   }
 }
 `;
-export const getRace = `query GetRace($id: ID!) {
-  getRace(id: $id) {
+export const getQuest = `query GetQuest($id: ID!) {
+  getQuest(id: $id) {
     id
+    owner
+    createdAt
+    updatedAt
+    isTaken
+    status
     name
-    description
+    lore
+    requirements {
+      id
+      name
+      rank
+      description
+    }
+    honorReward
+    file {
+      bucket
+      region
+      key
+    }
+    squad {
+      id
+      owner
+      name
+      createdAt
+      open
+    }
   }
 }
 `;
-export const listRaces = `query ListRaces(
-  $filter: ModelRaceFilterInput
+export const listQuests = `query ListQuests(
+  $filter: ModelQuestFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listRaces(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listQuests(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      owner
+      createdAt
+      updatedAt
+      isTaken
+      status
       name
-      description
+      lore
+      requirements {
+        id
+        name
+        rank
+        description
+      }
+      honorReward
+      file {
+        bucket
+        region
+        key
+      }
+      squad {
+        id
+        owner
+        name
+        createdAt
+        open
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const searchHeros = `query SearchHeros(
+  $filter: SearchableHeroFilterInput
+  $sort: SearchableHeroSortInput
+  $limit: Int
+  $nextToken: Int
+) {
+  searchHeros(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      user {
+        id
+        owner
+        name
+        createdAt
+      }
+      name
+      createdAt
+      image {
+        bucket
+        region
+        key
+      }
+      isOnline
+      honor
+      level
+      exp
+      title
+      race {
+        id
+        name
+        description
+      }
+      lore
+      skills {
+        id
+        name
+        rank
+        description
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const searchSquads = `query SearchSquads(
+  $filter: SearchableSquadFilterInput
+  $sort: SearchableSquadSortInput
+  $limit: Int
+  $nextToken: Int
+) {
+  searchSquads(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      owner
+      name
+      createdAt
+      open
+      quests {
+        items {
+          id
+          owner
+          createdAt
+          updatedAt
+          isTaken
+          status
+          name
+          lore
+          honorReward
+        }
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const searchQuests = `query SearchQuests(
+  $filter: SearchableQuestFilterInput
+  $sort: SearchableQuestSortInput
+  $limit: Int
+  $nextToken: Int
+) {
+  searchQuests(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      owner
+      createdAt
+      updatedAt
+      isTaken
+      status
+      name
+      lore
+      requirements {
+        id
+        name
+        rank
+        description
+      }
+      honorReward
+      file {
+        bucket
+        region
+        key
+      }
+      squad {
+        id
+        owner
+        name
+        createdAt
+        open
+      }
     }
     nextToken
   }

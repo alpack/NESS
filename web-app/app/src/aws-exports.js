@@ -2,13 +2,15 @@
 
 const awsmobile =  {
     "aws_project_region": "us-east-1",
-    "aws_cognito_identity_pool_id": "us-east-1:bf20a23d-47db-4b4f-b9d3-cba2953db777",
+    "aws_cognito_identity_pool_id": "us-east-1:fb2e640a-53c2-4c78-8166-f764498ab743",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_VojVM65zT",
-    "aws_user_pools_web_client_id": "6t2j7553mbvnvvomal7631vivf",
-    "aws_appsync_graphqlEndpoint": "https://fucgvngfcbbtjixdbxbqgeegn4.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_user_pools_id": "us-east-1_GpEVaKqEU",
+    "aws_user_pools_web_client_id": "6n17h6g9afm1euek7hq70865dg",
+    "aws_appsync_graphqlEndpoint": "https://osmn6giuh5doxjiuw7ctrq5ohu.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
-    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS"
+    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
+    "aws_user_files_s3_bucket": "ness-web-bucket",
+    "aws_user_files_s3_bucket_region": "us-east-1"
 };
 
 

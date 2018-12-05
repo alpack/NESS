@@ -78,26 +78,20 @@
 				}
 			}
 		},
-		"authcognito1d0974d1": {
+		"authcognito1356eede": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/app-20181204145453-deployment/amplify-cfn-templates/auth/cognito1d0974d1-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/app-20181205095818-deployment/amplify-cfn-templates/auth/cognito1356eede-cloudformation-template.yml",
 				"Parameters": {
-					"identityPoolName": "cognito1d0974d1_identitypool_1d0974d1",
-					"allowUnauthenticatedIdentities": false,
-					"thirdPartyAuth": false,
-					"lambdaLogPolicy": "cognito1d0974d1_lambda_log_policy",
-					"openIdLambdaRoleName": "cognito1d0974d1_openid_lambda_role",
-					"openIdRolePolicy": "cognito1d0974d1_openid_pass_role_policy",
-					"openIdLambdaIAMPolicy": "cognito1d0974d1_openid_lambda_iam_policy",
-					"openIdLogPolicy": "cognito1d0974d1_openid_lambda_log_policy",
-					"userPoolName": "cognito1d0974d1_userpool_1d0974d1",
+					"resourceName": "cognito1356eede",
+					"authSelections": "identityPoolAndUserPool",
+					"userPoolName": "cognito1356eede_userpool_1356eede",
 					"autoVerifiedAttributes": "email",
 					"mfaConfiguration": "OFF",
 					"mfaTypes": "SMS Text Message",
-					"roleName": "cognito1d0974d1_sns-role",
-					"roleExternalId": "cognito1d0974d1_role_external_id",
-					"policyName": "cognito1d0974d1-sns-policy",
+					"roleName": "cognito1356eede_sns-role",
+					"roleExternalId": "cognito1356eede_role_external_id",
+					"policyName": "cognito1356eede-sns-policy",
 					"smsAuthenticationMessage": "Your authentication code is {####}",
 					"smsVerificationMessage": "Your verification code is {####}",
 					"emailVerificationSubject": "Your verification code",
@@ -106,44 +100,67 @@
 					"passwordPolicyMinLength": 8,
 					"passwordPolicyCharacters": "Requires Lowercase,Requires Uppercase,Requires Numbers,Requires Symbols",
 					"requiredAttributes": "email",
-					"userpoolClientName": "cognito1d0974d1_app_client",
+					"userpoolClientName": "cognito1356eede_app_client",
 					"userpoolClientGenerateSecret": true,
 					"userpoolClientRefreshTokenValidity": 30,
 					"userpoolClientReadAttributes": "email",
-					"mfaLambdaRole": "cognito1d0974d1_totp_lambda_role",
-					"mfaLambdaLogPolicy": "cognito1d0974d1_totp_lambda_log_policy",
-					"mfaPassRolePolicy": "cognito1d0974d1_totp_pass_role_policy",
-					"mfaLambdaIAMPolicy": "cognito1d0974d1_totp_lambda_iam_policy",
-					"userpoolClientLambdaRole": "cognito1d0974d1_userpoolclient_lambda_role",
-					"userpoolClientLogPolicy": "cognito1d0974d1_userpoolclient_lambda_log_policy",
-					"userpoolClientLambdaPolicy": "cognito1d0974d1_userpoolclient_lambda_iam_policy",
+					"mfaLambdaRole": "cognito1356eede_totp_lambda_role",
+					"mfaLambdaLogPolicy": "cognito1356eede_totp_lambda_log_policy",
+					"mfaPassRolePolicy": "cognito1356eede_totp_pass_role_policy",
+					"mfaLambdaIAMPolicy": "cognito1356eede_totp_lambda_iam_policy",
+					"userpoolClientLambdaRole": "cognito1356eede_userpoolclient_lambda_role",
+					"userpoolClientLogPolicy": "cognito1356eede_userpoolclient_lambda_log_policy",
+					"userpoolClientLambdaPolicy": "cognito1356eede_userpoolclient_lambda_iam_policy",
 					"userpoolClientSetAttributes": false,
+					"identityPoolName": "cognito1356eede_identitypool_1356eede",
+					"allowUnauthenticatedIdentities": false,
+					"thirdPartyAuth": false,
+					"lambdaLogPolicy": "cognito1356eede_lambda_log_policy",
+					"openIdLambdaRoleName": "cognito1356eede_openid_lambda_role",
+					"openIdRolePolicy": "cognito1356eede_openid_pass_role_policy",
+					"openIdLambdaIAMPolicy": "cognito1356eede_openid_lambda_iam_policy",
+					"openIdLogPolicy": "cognito1356eede_openid_lambda_log_policy",
 					"useDefault": "default",
-					"unAuthRoleName": "app-20181204145453-unauthRole",
-					"authRoleName": "app-20181204145453-authRole",
-					"unAuthRoleArn": "arn:aws:iam::582223494038:role/app-20181204145453-unauthRole",
-					"authRoleArn": "arn:aws:iam::582223494038:role/app-20181204145453-authRole",
-					"resourceName": "cognito1d0974d1",
-					"authSelections": "identityPoolAndUserPool"
+					"unAuthRoleName": "app-20181205095818-unauthRole",
+					"authRoleName": "app-20181205095818-authRole",
+					"unAuthRoleArn": "arn:aws:iam::582223494038:role/app-20181205095818-unauthRole",
+					"authRoleArn": "arn:aws:iam::582223494038:role/app-20181205095818-authRole"
 				}
 			}
 		},
-		"apiNessApplicationAPI": {
+		"apiNessUserAPI": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/app-20181204145453-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/app-20181205095818-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
-					"AppSyncApiName": "NessApplicationAPI",
+					"AppSyncApiName": "NessUserAPI",
 					"AuthCognitoUserPoolId": {
 						"Fn::GetAtt": [
-							"authcognito1d0974d1",
+							"authcognito1356eede",
 							"Outputs.UserPoolId"
 						]
 					},
-					"schemaGraphql": "s3://app-20181204145453-deployment/amplify-appsync-files/schema.graphql.1543948225568",
-					"ResolverBucket": "app-20181204145453-deployment",
+					"schemaGraphql": "s3://app-20181205095818-deployment/amplify-appsync-files/schema.graphql.1544016881061",
+					"ElasticSearchStreamingLambdaCodeS3Key": "amplify-appsync-files/python_streaming_function.zip",
+					"ElasticSearchStreamingLambdaCodeS3Bucket": "app-20181205095818-deployment",
+					"ResolverBucket": "app-20181205095818-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1543948225568"
+					"DeploymentTimestamp": "1544016881061"
+				}
+			}
+		},
+		"storagenessWebStorage": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/app-20181205095818-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"Parameters": {
+					"bucketName": "ness-web-bucket",
+					"authPolicyName": "s3_amplify_25b270c0",
+					"unauthPolicyName": "s3_amplify_25b270c0",
+					"authRoleName": "app-20181205095818-authRole",
+					"unauthRoleName": "app-20181205095818-unauthRole",
+					"authPermissions": "rw",
+					"unauthPermissions": ""
 				}
 			}
 		}

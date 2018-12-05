@@ -1,17 +1,19 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const createAccount = `mutation CreateAccount($input: CreateAccountInput!) {
-  createAccount(input: $input) {
+export const createUser = `mutation CreateUser($input: CreateUserInput!) {
+  createUser(input: $input) {
     id
-    name
     owner
-    lastLogin
+    name
+    createdAt
     heroes {
       items {
         id
         name
-        online
+        createdAt
+        isOnline
+        honor
         level
         exp
         title
@@ -22,17 +24,19 @@ export const createAccount = `mutation CreateAccount($input: CreateAccountInput!
   }
 }
 `;
-export const updateAccount = `mutation UpdateAccount($input: UpdateAccountInput!) {
-  updateAccount(input: $input) {
+export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
+  updateUser(input: $input) {
     id
-    name
     owner
-    lastLogin
+    name
+    createdAt
     heroes {
       items {
         id
         name
-        online
+        createdAt
+        isOnline
+        honor
         level
         exp
         title
@@ -43,17 +47,19 @@ export const updateAccount = `mutation UpdateAccount($input: UpdateAccountInput!
   }
 }
 `;
-export const deleteAccount = `mutation DeleteAccount($input: DeleteAccountInput!) {
-  deleteAccount(input: $input) {
+export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
+  deleteUser(input: $input) {
     id
-    name
     owner
-    lastLogin
+    name
+    createdAt
     heroes {
       items {
         id
         name
-        online
+        createdAt
+        isOnline
+        honor
         level
         exp
         title
@@ -67,18 +73,21 @@ export const deleteAccount = `mutation DeleteAccount($input: DeleteAccountInput!
 export const createHero = `mutation CreateHero($input: CreateHeroInput!) {
   createHero(input: $input) {
     id
-    account {
+    user {
       id
-      name
       owner
-      lastLogin
+      name
+      createdAt
     }
     name
+    createdAt
     image {
-      id
       bucket
+      region
+      key
     }
-    online
+    isOnline
+    honor
     level
     exp
     title
@@ -90,6 +99,7 @@ export const createHero = `mutation CreateHero($input: CreateHeroInput!) {
     lore
     skills {
       id
+      name
       rank
       description
     }
@@ -99,18 +109,21 @@ export const createHero = `mutation CreateHero($input: CreateHeroInput!) {
 export const updateHero = `mutation UpdateHero($input: UpdateHeroInput!) {
   updateHero(input: $input) {
     id
-    account {
+    user {
       id
-      name
       owner
-      lastLogin
+      name
+      createdAt
     }
     name
+    createdAt
     image {
-      id
       bucket
+      region
+      key
     }
-    online
+    isOnline
+    honor
     level
     exp
     title
@@ -122,6 +135,7 @@ export const updateHero = `mutation UpdateHero($input: UpdateHeroInput!) {
     lore
     skills {
       id
+      name
       rank
       description
     }
@@ -131,18 +145,21 @@ export const updateHero = `mutation UpdateHero($input: UpdateHeroInput!) {
 export const deleteHero = `mutation DeleteHero($input: DeleteHeroInput!) {
   deleteHero(input: $input) {
     id
-    account {
+    user {
       id
-      name
       owner
-      lastLogin
+      name
+      createdAt
     }
     name
+    createdAt
     image {
-      id
       bucket
+      region
+      key
     }
-    online
+    isOnline
+    honor
     level
     exp
     title
@@ -154,84 +171,178 @@ export const deleteHero = `mutation DeleteHero($input: DeleteHeroInput!) {
     lore
     skills {
       id
+      name
       rank
       description
     }
   }
 }
 `;
-export const createImage = `mutation CreateImage($input: CreateImageInput!) {
-  createImage(input: $input) {
+export const createSquad = `mutation CreateSquad($input: CreateSquadInput!) {
+  createSquad(input: $input) {
     id
-    bucket
-    fullsize {
-      key
-      width
-      height
-    }
-    thumbnail {
-      key
-      width
-      height
-    }
-  }
-}
-`;
-export const updateImage = `mutation UpdateImage($input: UpdateImageInput!) {
-  updateImage(input: $input) {
-    id
-    bucket
-    fullsize {
-      key
-      width
-      height
-    }
-    thumbnail {
-      key
-      width
-      height
-    }
-  }
-}
-`;
-export const deleteImage = `mutation DeleteImage($input: DeleteImageInput!) {
-  deleteImage(input: $input) {
-    id
-    bucket
-    fullsize {
-      key
-      width
-      height
-    }
-    thumbnail {
-      key
-      width
-      height
-    }
-  }
-}
-`;
-export const createRace = `mutation CreateRace($input: CreateRaceInput!) {
-  createRace(input: $input) {
-    id
+    owner
     name
-    description
+    createdAt
+    open
+    quests {
+      items {
+        id
+        owner
+        createdAt
+        updatedAt
+        isTaken
+        status
+        name
+        lore
+        honorReward
+      }
+      nextToken
+    }
   }
 }
 `;
-export const updateRace = `mutation UpdateRace($input: UpdateRaceInput!) {
-  updateRace(input: $input) {
+export const updateSquad = `mutation UpdateSquad($input: UpdateSquadInput!) {
+  updateSquad(input: $input) {
     id
+    owner
     name
-    description
+    createdAt
+    open
+    quests {
+      items {
+        id
+        owner
+        createdAt
+        updatedAt
+        isTaken
+        status
+        name
+        lore
+        honorReward
+      }
+      nextToken
+    }
   }
 }
 `;
-export const deleteRace = `mutation DeleteRace($input: DeleteRaceInput!) {
-  deleteRace(input: $input) {
+export const deleteSquad = `mutation DeleteSquad($input: DeleteSquadInput!) {
+  deleteSquad(input: $input) {
     id
+    owner
     name
-    description
+    createdAt
+    open
+    quests {
+      items {
+        id
+        owner
+        createdAt
+        updatedAt
+        isTaken
+        status
+        name
+        lore
+        honorReward
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const createQuest = `mutation CreateQuest($input: CreateQuestInput!) {
+  createQuest(input: $input) {
+    id
+    owner
+    createdAt
+    updatedAt
+    isTaken
+    status
+    name
+    lore
+    requirements {
+      id
+      name
+      rank
+      description
+    }
+    honorReward
+    file {
+      bucket
+      region
+      key
+    }
+    squad {
+      id
+      owner
+      name
+      createdAt
+      open
+    }
+  }
+}
+`;
+export const updateQuest = `mutation UpdateQuest($input: UpdateQuestInput!) {
+  updateQuest(input: $input) {
+    id
+    owner
+    createdAt
+    updatedAt
+    isTaken
+    status
+    name
+    lore
+    requirements {
+      id
+      name
+      rank
+      description
+    }
+    honorReward
+    file {
+      bucket
+      region
+      key
+    }
+    squad {
+      id
+      owner
+      name
+      createdAt
+      open
+    }
+  }
+}
+`;
+export const deleteQuest = `mutation DeleteQuest($input: DeleteQuestInput!) {
+  deleteQuest(input: $input) {
+    id
+    owner
+    createdAt
+    updatedAt
+    isTaken
+    status
+    name
+    lore
+    requirements {
+      id
+      name
+      rank
+      description
+    }
+    honorReward
+    file {
+      bucket
+      region
+      key
+    }
+    squad {
+      id
+      owner
+      name
+      createdAt
+      open
+    }
   }
 }
 `;

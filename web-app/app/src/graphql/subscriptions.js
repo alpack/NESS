@@ -1,17 +1,19 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const onCreateAccount = `subscription OnCreateAccount {
-  onCreateAccount {
+export const onCreateUser = `subscription OnCreateUser {
+  onCreateUser {
     id
-    name
     owner
-    lastLogin
+    name
+    createdAt
     heroes {
       items {
         id
         name
-        online
+        createdAt
+        isOnline
+        honor
         level
         exp
         title
@@ -22,17 +24,19 @@ export const onCreateAccount = `subscription OnCreateAccount {
   }
 }
 `;
-export const onUpdateAccount = `subscription OnUpdateAccount {
-  onUpdateAccount {
+export const onUpdateUser = `subscription OnUpdateUser {
+  onUpdateUser {
     id
-    name
     owner
-    lastLogin
+    name
+    createdAt
     heroes {
       items {
         id
         name
-        online
+        createdAt
+        isOnline
+        honor
         level
         exp
         title
@@ -43,17 +47,19 @@ export const onUpdateAccount = `subscription OnUpdateAccount {
   }
 }
 `;
-export const onDeleteAccount = `subscription OnDeleteAccount {
-  onDeleteAccount {
+export const onDeleteUser = `subscription OnDeleteUser {
+  onDeleteUser {
     id
-    name
     owner
-    lastLogin
+    name
+    createdAt
     heroes {
       items {
         id
         name
-        online
+        createdAt
+        isOnline
+        honor
         level
         exp
         title
@@ -67,18 +73,21 @@ export const onDeleteAccount = `subscription OnDeleteAccount {
 export const onCreateHero = `subscription OnCreateHero {
   onCreateHero {
     id
-    account {
+    user {
       id
-      name
       owner
-      lastLogin
+      name
+      createdAt
     }
     name
+    createdAt
     image {
-      id
       bucket
+      region
+      key
     }
-    online
+    isOnline
+    honor
     level
     exp
     title
@@ -90,6 +99,7 @@ export const onCreateHero = `subscription OnCreateHero {
     lore
     skills {
       id
+      name
       rank
       description
     }
@@ -99,18 +109,21 @@ export const onCreateHero = `subscription OnCreateHero {
 export const onUpdateHero = `subscription OnUpdateHero {
   onUpdateHero {
     id
-    account {
+    user {
       id
-      name
       owner
-      lastLogin
+      name
+      createdAt
     }
     name
+    createdAt
     image {
-      id
       bucket
+      region
+      key
     }
-    online
+    isOnline
+    honor
     level
     exp
     title
@@ -122,6 +135,7 @@ export const onUpdateHero = `subscription OnUpdateHero {
     lore
     skills {
       id
+      name
       rank
       description
     }
@@ -131,18 +145,21 @@ export const onUpdateHero = `subscription OnUpdateHero {
 export const onDeleteHero = `subscription OnDeleteHero {
   onDeleteHero {
     id
-    account {
+    user {
       id
-      name
       owner
-      lastLogin
+      name
+      createdAt
     }
     name
+    createdAt
     image {
-      id
       bucket
+      region
+      key
     }
-    online
+    isOnline
+    honor
     level
     exp
     title
@@ -154,84 +171,178 @@ export const onDeleteHero = `subscription OnDeleteHero {
     lore
     skills {
       id
+      name
       rank
       description
     }
   }
 }
 `;
-export const onCreateImage = `subscription OnCreateImage {
-  onCreateImage {
+export const onCreateSquad = `subscription OnCreateSquad {
+  onCreateSquad {
     id
-    bucket
-    fullsize {
-      key
-      width
-      height
-    }
-    thumbnail {
-      key
-      width
-      height
-    }
-  }
-}
-`;
-export const onUpdateImage = `subscription OnUpdateImage {
-  onUpdateImage {
-    id
-    bucket
-    fullsize {
-      key
-      width
-      height
-    }
-    thumbnail {
-      key
-      width
-      height
-    }
-  }
-}
-`;
-export const onDeleteImage = `subscription OnDeleteImage {
-  onDeleteImage {
-    id
-    bucket
-    fullsize {
-      key
-      width
-      height
-    }
-    thumbnail {
-      key
-      width
-      height
-    }
-  }
-}
-`;
-export const onCreateRace = `subscription OnCreateRace {
-  onCreateRace {
-    id
+    owner
     name
-    description
+    createdAt
+    open
+    quests {
+      items {
+        id
+        owner
+        createdAt
+        updatedAt
+        isTaken
+        status
+        name
+        lore
+        honorReward
+      }
+      nextToken
+    }
   }
 }
 `;
-export const onUpdateRace = `subscription OnUpdateRace {
-  onUpdateRace {
+export const onUpdateSquad = `subscription OnUpdateSquad {
+  onUpdateSquad {
     id
+    owner
     name
-    description
+    createdAt
+    open
+    quests {
+      items {
+        id
+        owner
+        createdAt
+        updatedAt
+        isTaken
+        status
+        name
+        lore
+        honorReward
+      }
+      nextToken
+    }
   }
 }
 `;
-export const onDeleteRace = `subscription OnDeleteRace {
-  onDeleteRace {
+export const onDeleteSquad = `subscription OnDeleteSquad {
+  onDeleteSquad {
     id
+    owner
     name
-    description
+    createdAt
+    open
+    quests {
+      items {
+        id
+        owner
+        createdAt
+        updatedAt
+        isTaken
+        status
+        name
+        lore
+        honorReward
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onCreateQuest = `subscription OnCreateQuest {
+  onCreateQuest {
+    id
+    owner
+    createdAt
+    updatedAt
+    isTaken
+    status
+    name
+    lore
+    requirements {
+      id
+      name
+      rank
+      description
+    }
+    honorReward
+    file {
+      bucket
+      region
+      key
+    }
+    squad {
+      id
+      owner
+      name
+      createdAt
+      open
+    }
+  }
+}
+`;
+export const onUpdateQuest = `subscription OnUpdateQuest {
+  onUpdateQuest {
+    id
+    owner
+    createdAt
+    updatedAt
+    isTaken
+    status
+    name
+    lore
+    requirements {
+      id
+      name
+      rank
+      description
+    }
+    honorReward
+    file {
+      bucket
+      region
+      key
+    }
+    squad {
+      id
+      owner
+      name
+      createdAt
+      open
+    }
+  }
+}
+`;
+export const onDeleteQuest = `subscription OnDeleteQuest {
+  onDeleteQuest {
+    id
+    owner
+    createdAt
+    updatedAt
+    isTaken
+    status
+    name
+    lore
+    requirements {
+      id
+      name
+      rank
+      description
+    }
+    honorReward
+    file {
+      bucket
+      region
+      key
+    }
+    squad {
+      id
+      owner
+      name
+      createdAt
+      open
+    }
   }
 }
 `;
