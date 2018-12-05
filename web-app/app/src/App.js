@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './style/App.css';
 
 import aws_exports from './aws-exports';
 import { withAuthenticator } from 'aws-amplify-react';
@@ -15,7 +15,7 @@ class App extends Component {
 		return (
 			<div className="App-background">
 				<h1 id="BemVindo">Bem Vindo</h1>
-				<button id="searchButton">Search Hero</button>
+				<button id="searchButton" onClick="">Search Hero</button>
 				<div className="heroList">
 					<Grid padded>
 						<Grid.Column>
