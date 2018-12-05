@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import image from './img/Background_NESS.jpg';
 
 import aws_exports from './aws-exports';
 import { withAuthenticator } from 'aws-amplify-react';
@@ -15,11 +14,15 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App-background">
-				<Grid padded>
-					<Grid.Column>
-						<HerosListLoader/>
-					</Grid.Column>
-				</Grid>
+				<h1 id="BemVindo">Bem Vindo</h1>
+				<button id="searchButton">Search Hero</button>
+				<div className="heroList">
+					<Grid padded>
+						<Grid.Column>
+							<HerosListLoader />
+						</Grid.Column>
+					</Grid>
+				</div>
 			</div>
 		);
 	}

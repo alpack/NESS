@@ -1,7 +1,7 @@
 import React from 'react';
 import { Connect } from 'aws-amplify-react';
 import { graphqlOperation } from 'aws-amplify';
-import { Header, List, Segment } from 'semantic-ui-react';
+import { Header, List} from 'semantic-ui-react';
 import './allHeroes.css';
 
 // Create a function we can use to sort an array of objects by a common property

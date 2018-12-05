@@ -1,5 +1,3 @@
-
-
 .HerosListLoader{
 	color: 'black';
     background: white;
@@ -11,8 +9,9 @@
     padding-bottom: 10px;
     padding-top: 5px;
     text-align: left;
-    height: 200px;
-    position: bottom;
+    height: 175px;
+    position: top;
+    padding-top: 10px;
 }
 
 .HerosListLoader:hover {
