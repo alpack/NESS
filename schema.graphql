@@ -1,0 +1,103 @@
+type Hero
+    @model
+    @searchable {
+    id: ID!
+    name: String!
+    owner: String
+    registered: Boolean
+    createdAt: String
+    updatedAt: String
+    image: S3Object
+    isOnline: Boolean
+    level: Int
+    exp: Int
+    title: String!
+    race: Race!
+    lore: String!
+    skills: [Skill!]! @connection(name: "HeroSkills")
+    squads: Squad @connection(name: "HeroSquads")
+}
+
+type Squad
+  @model
+  @searchable
+  @versioned {
+  id: ID!
+  owner: String
+  name: String!
+  createdAt: String
+  updatedAt: String
+  isRecruiting: Boolean
+  heroes: [Hero] @connection(name: "HeroSquads")
+  quest: Quest @connection(name: "SquadQuests")
+}
+
+type Quest
+    @model
+    @searchable
+    @versioned {
+    id: ID!
+    name: String!
+    owner: String
+    region: String!
+    createdAt: String
+    updatedAt: String
+    isTaken: Boolean!
+    lore: String!
+    requirements: [Skill!]!
+    reward: Int!
+    contact: String!
+    file: S3Object
+    squad: Squad @connection(name: "SquadQuests")
+}
+
+type Skill
+    @model
+    @searchable {
+    id: ID!
+    name: String!
+    rank: Int!
+    description: String!
+    hero: Hero @connection(name: "HeroSkills")
+}
+
+type Picture 
+    @model 
+    @auth(rules: [{ allow: owner, mutations: [update, delete]}] ){
+    id: ID!
+    name: String!
+    owner: String
+    createdAt: String
+    visibility: Visibility!
+    file: S3Object
+}
+
+type S3Object {
+    bucket: String!
+    region: String!
+    key: String!
+}
+
+enum Visibility {
+    public
+    private
+}
+
+type Race {
+    RaceEnum: Int!
+    description: String!
+}
+
+enum RaceEnum {
+    Humano
+    Automato
+    Tron
+    Android
+    Virus
+    Cyborg
+    IA
+    Alien
+    Metamorfo
+    Jumpers
+    Kleber
+}
