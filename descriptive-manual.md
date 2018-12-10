@@ -8,10 +8,12 @@
 
 ![Design Undergraduate and ALPACK&apos;s User Interface Designer](.gitbook/assets/xandinho_oficial.png)
 
-Designer e Desenvolvedor de Jogos, 18 anos, formado no projeto NAVE em programação de jogos digitais e agora sigo cursando design no CESAR School. Especialista em desenvolvimento de IoT, participando como mentor de diversos workshops no LOUCo voltados para a melhoria da cidade. Participante de projetos como o Wereld, semifinalista do Technovation challenge 2016.
-
 * **E-mail:** ajsj@cesar.school
 * **LinkedIn:** [**https://www.linkedin.com/in/alexandrojunior/**](https://www.linkedin.com/in/alexandrojunior/) ****
+
+Designer and Game Developer, 18 years, graduated in digital game programming from the NAVE project and now is studying design at CESAR School. Specialist in IoT development, participated in many workshops at L.O.U.Co with the intent of improving the city. Participant of projects like Wereld, sime-finalist of the Technovation challenge in 2016.
+
+ 
 
 ### **Arthur Reis**
 
@@ -21,6 +23,8 @@ Estudante de Ciência da Computação do Cesar, 19 anos, sempre muito interessad
 
 * **E-mail:** aor@cesar.school
 * **LinkedIn:** [**https://www.linkedin.com/in/aoreis/**](https://www.linkedin.com/in/aoreis/)\*\*\*\*
+
+Student of Computer Science at Cesar School, 19 years, always interested in topics related to computers and astronomy. Has also a lot of interest in other cultures and languages, especially from Asia, currently he is studying chines and japanese. Has interest in working with technology related with astronomy and music. 
 
 ### **Cecília Frazão**
 
