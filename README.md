@@ -24,9 +24,17 @@ Engaging the multidisciplinary groups in the [Porto Digital](http://www.portodig
 
 ## The Problem: ?
 
-paragraph
+Due to the fast growth of L.O.U.Co and the high interest of users to develop their projects at the space, the high volume of users in and out of L.O.U.Co made it impossible to address everyone. When the lab determined appointments  obligatory to use machines, the problem worsened due to the manual processes behind making an appointment: users emailed a staff member at L.O.U.Co which could take a day or more to answer. 
 
-## The Solution: NESS! 
+In addition to the appointment issue, L.O.U.Co also faced a problem surrounding user protagonism and independence. L.O.U.Co users \(for most part\) are heavily dependent on the staff to make use of machines. Furthermore, they have an tremendous amount of experience which is not, usually, shared amongst themselves when developing projects, physically at the lab, or not.
 
-In order to overcome the burden of mechanical and exhaustive tasks and activities which stifle innovation, us at ALPACK - in partnership with CESAR School and L.O.U.Co \(Lab for Connected Urban Objects\) - decided to approach things somewhat differently. The goal is to gamify repetitive and time consuming, but necessary, activities in order to promote collaboration and learning alongside assuring that each individual is the protagonist of their journey. In five months, the team delivered an MVP to L.O.U.Co, which will enabled to bring to life a journey's game-like epicness.
+## The Solution: ! 
+
+In order to overcome the burden of mechanical and exhaustive tasks and activities which stifle innovation, us at ALPACK - in partnership with CESAR School and L.O.U.Co \(Lab for Connected Urban Objects\) - decided to approach things somewhat differently. 
+
+The group decided to approach both issues - overcome challenges regarding the appointment process and promote user independence and protagonism. Making use of the [Bazaar](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar) approach, the team focused on developing the core idea for each solution, iterating quickly.
+
+Regarding the appointment challenge, the team quickly decided to adopt an existing platform called SimplyBookme. Once ready, the platform ensured a better user flow in the lab. Then, the team moved on to the value proposition: promote user independence and protagonism. 
+
+The goal is to gamify repetitive and time consuming, but necessary, activities in order to promote collaboration and learning alongside assuring that each individual is the protagonist of their journey. In five months, the team delivered an MVP to L.O.U.Co, which will enabled to bring to life a journey's game-like epicness.
 
