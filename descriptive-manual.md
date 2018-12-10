@@ -46,7 +46,7 @@ Student of design at Cesar, 24 years old, presents a vast knowledge in the area 
 
 ![ Computer Science Undergraduate, ALPACK&apos;s Back-end Developer &amp; Tester](.gitbook/assets/leonardo_oficial.png)
 
-Aos 19 anos, abandonou o curso de Fisioterapia para seguir um caminho diferente. Foi saindo da zona de conforto e deixando a busca por estabilidade para trás que desenvolveu autoconhecimento e assertividade para encontrar-se em Ciência da Computação. Adquiriu conhecimentos em desenvolvimento de software, metodologias ágeis e resolução de problemas. Hoje, aos 21 anos, faz parte do time de devs da ALPACK.
+At 19 years of age, abandoned the course of physiotherapy to follow a different path. Leaving the comfort zone and stop seraching stability wich develop self knowledge and assertiveness to find himself in Computer Science. Acquired knowledge in software development, agile methodology and problem solution. Currently, with 21 years old, is apart of the time Alpack as a developer 
 
 * **E-mail:** lcbm@cesar.school
 * **LinkedIn:** [**https://www.linkedin.com/in/leonardo-melo-3b4521137/**](https://www.linkedin.com/in/leonardo-melo-3b4521137/)\*\*\*\*
@@ -55,7 +55,7 @@ Aos 19 anos, abandonou o curso de Fisioterapia para seguir um caminho diferente.
 
 ![ Computer Science Undergraduate, ALPACK&apos;s DevOps &amp; Front-end Developer](.gitbook/assets/bolinho_oficial.jpg)
 
-Com 17 anos de idade está seguindo o caminho que sempre sonhou, o da tecnologia, e mais especificamente a criação das novas tecnologias, visando revolucionar e melhorar o ambiente ao seu redor com os seus conhecimentos. É com esse objetivo que hoje é estudante de Ciência da Computação no CESAR school. Adquirindo e desenvolvendo habilidades relacionadas ao desenvolvimento de software e a resolução de problemas, sendo hoje parte do time de desenvolvedores do grupo ALPACK.
+ At only 17, is on the path he always dreamt of: the one of technology, more specifically the creation of new technologies - foreseeing to revolutionize and improve the world around him. With this goal in mind, Pedro is now a Computer Science Undergraduate at CESAR School. Acquiring and developing new skills, strongly tied to software development and problem resolution lead him to become, today, part of ALPACK's developer team.
 
 * **E-mail:** phjfg@cesar.school
 * **Phone:** +55 \(81\) 98623-1559
