@@ -1,4 +1,4 @@
-# IMPLEMENTAÇÃO
+# IMPLEMENTATIONS
 
 ## NESS Web Application
 
