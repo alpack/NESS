@@ -58,7 +58,3 @@ Com 17 anos de idade está seguindo o caminho que sempre sonhou, o da tecnologia
 * **E-mail:** phjfg@cesar.school
 * **Phone:** +55 \(81\) 98623-1559
 
-|  |
-| :--- |
-
-

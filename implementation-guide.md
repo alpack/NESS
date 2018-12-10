@@ -1,3 +1,7 @@
+---
+description: A thorough explanative guide for implementing NESS.
+---
+
 # IMPLEMENTATIONS
 
 ## NESS Web Application
@@ -193,4 +197,8 @@ $ cd bin
 ## Others 
 
 In solution of the booking process, the group used an existing digital platforme named Simplybookme.com. In order to improve your booking process, you need to do a lot of research in terms of the different platforms so that way you will know what best suits the service of the company. Here´s the link to our booking website: [http://louco.simplybook.me/v2/](http://louco.simplybook.me/v2/) 
+
+## Others
+
+In solution of the booking process, the group used an existing digital platforme named Simplybookme.com. In order to improve your booking process, you need to do a lot of research in terms of the different platforms so that way you will know what best suits the service of the company. Here´s the link to our booking website: [http://louco.simplybook.me/v2/](http://louco.simplybook.me/v2/)
 

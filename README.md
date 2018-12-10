@@ -1,8 +1,7 @@
 ---
 description: >-
-  “Humanity has the stars in its future, and that future is too important to be
-  lost under the burden of juvenile folly and ignorant superstition”.  — Isaac
-  Asimov
+  A brief presentation of the NESS project. Source-code and other repositories
+  can be found at https://github.com/alpack
 ---
 
 # NESS
@@ -25,7 +24,7 @@ Engaging the multidisciplinary groups in the [Porto Digital](http://www.portodig
 
 ## The Problem: ?
 
-\[problem here\]
+paragraph
 
 ## The Solution: NESS! 
 
