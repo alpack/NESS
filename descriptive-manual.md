@@ -1,8 +1,8 @@
 # ALPACK
 
-## O Dream Team
+## The Dream Team
 
-> ALPACK é um time de \(seis\) alunos da graduação da faculdade Cesar School. A faculdade de Inovação Cesar School se localiza na área do Porto Digital \(Recife, Brasil\).
+> ALPACK is a team of \[six\] undergraduates from CESAR School - CESAR's school of Innovation, located in the Porto Digital area \(Recife, Brazil\).
 
 ### Alexandro Junior
 
