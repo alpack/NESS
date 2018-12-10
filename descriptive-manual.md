@@ -11,7 +11,7 @@
 * **E-mail:** ajsj@cesar.school
 * **LinkedIn:** [**https://www.linkedin.com/in/alexandrojunior/**](https://www.linkedin.com/in/alexandrojunior/) ****
 
-Designer and Game Developer, 18 years, graduated in digital game programming from the NAVE project and now is studying design at CESAR School. Specialist in IoT development, participated in many workshops at L.O.U.Co with the intent of improving the city. Participant of projects like Wereld, sime-finalist of the Technovation challenge in 2016.
+Designer and Game Developer, 18 years old, graduated in digital game programming from the NAVE project and now is studying design at CESAR School. Specialist in IoT development, participated in many workshops at L.O.U.Co with the intent of improving the city. Participant of projects like Wereld, sime-finalist of the Technovation challenge in 2016.
 
  
 
@@ -19,16 +19,16 @@ Designer and Game Developer, 18 years, graduated in digital game programming fro
 
 ![](.gitbook/assets/arthur_oficial.png)
 
-Estudante de Ciência da Computação do Cesar, 19 anos, sempre muito interessado em assuntos relacionados a computadores e astronomia. Se descobriu na área de forma natural. Com bastante interesse em outras culturas e línguas, principalmente da Ásia, atualmente estuda chinês e japonês. Tem bastante interesse em trabalhar com tecnologia relacionada a astronomia e música.
+Student of Computer Science at Cesar School, 19 years old, always interested in topics related to computers and astronomy. Has also a lot of interest in other cultures and languages, especially from Asia, currently he is studying chines and japanese. Has interest in working with technology related with astronomy and music. 
 
 * **E-mail:** aor@cesar.school
 * **LinkedIn:** [**https://www.linkedin.com/in/aoreis/**](https://www.linkedin.com/in/aoreis/)\*\*\*\*
 
-Student of Computer Science at Cesar School, 19 years, always interested in topics related to computers and astronomy. Has also a lot of interest in other cultures and languages, especially from Asia, currently he is studying chines and japanese. Has interest in working with technology related with astronomy and music. 
-
 ### **Cecília Frazão**
 
 ![Design Undergraduate and ALPACK&apos;s User Experience Designer](.gitbook/assets/cecilia_oficial.png)
+
+Student of Design at Cesar, 20 years old, presents drawing abilities and manual works, also has knowledge in the area of architecture and administration. Fluent in english and has beginners level of japanese. Has interest to work with animations and gaming. Participated in working with UX and UI in the NESS Project.
 
 Estudante de Design do Cesar, com 20 anos de idade, apresenta habilidades de desenho e trabalhos manuais como também tem conhecimento na área de arquitetura e administração. Além disso, é fluente em inglês e tem o nível básico de japonês. Tem interesse em trabalhar na parte de animação como também na área de jogos.Teve participação de trabalhar com UX e UI no Projeto NESS.  
 
@@ -39,7 +39,7 @@ Estudante de Design do Cesar, com 20 anos de idade, apresenta habilidades de des
 
 ![Design Undergraduate and ALPACK&apos;s User Experience Designer](.gitbook/assets/kleber_oficial.png)
 
-Estudante de design da Cesar School, 24 anos de idade, possui grande conhecimento na área de jogos e gamificação, possui destreza com trabalhos manuais, tem experiência com edição de fotos e ilustrações digitais. Possui inglês avançado. Tem como objetivo principal trabalhar na área de jogos como Game Designer. Participação no Projeto NESS como UX e UI Designer.
+Student of design at Cesar, 24 years old, presents a vast knowledge in the area of gamefication, has a ability to manual jobs, also has experience with editing photos and digital ilustrations. English level advance. Main objective is to work with games as a Game Designer. Participated in the NESS Project as a UX and UI designer. 
 
 * **E-mail:** kwssf@cesar.school
 * **LinkedIn:** [**https://www.linkedin.com/in/kleber94/**](https://www.linkedin.com/in/kleber94/)\*\*\*\*
