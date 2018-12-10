@@ -1,10 +1,3 @@
----
-description: >-
-  A brief description about the wonderful humans who worked together for a
-  semester to make this project go from rust to reality. You can also find us at
-  alpack.github.io
----
-
 # ALPACK
 
 ## The Dream Team

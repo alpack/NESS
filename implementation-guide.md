@@ -1,9 +1,3 @@
----
-description: >-
-  A detailed documentation of NESS's requirements and a step-by-step
-  implementation guide for both web and desktop applications.
----
-
 # IMPLEMENTATION
 
 ## NESS Web Application
@@ -166,6 +160,16 @@ NESS Desktop Application is a
 4. **Server** must have Python 3.6, or above, installed ;
 5. **Owner** must clone NESS Project from ALPACK's GitHub
 6. **Owner** must build the application;
+
+## Instalar prerequisitos
+
+1. Para instalar o gcc no seu computador, siga este link [https://gcc.gnu.org/install/binaries.html](https://gcc.gnu.org/install/binaries.html) e selecione o seu sistema operacional. 
+
+   Para plataformas linux utilize o comando: 
+
+   $ sudo apt-get install build-essential
+
+2. Para instalar o python 3 no seu computador acesse esse link [https://www.python.org/downloads/](https://www.python.org/downloads/) e selecione a opção que melhor se encaixa com seu computador 
 
 ## Initial Setup
 
