@@ -30,8 +30,6 @@ Student of Computer Science at Cesar School, 19 years old, always interested in 
 
 Student of Design at Cesar, 20 years old, presents drawing abilities and manual works, also has knowledge in the area of architecture and administration. Fluent in english and has beginners level of japanese. Has interest to work with animations and gaming. Participated in working with UX and UI in the NESS Project.
 
-Estudante de Design do Cesar, com 20 anos de idade, apresenta habilidades de desenho e trabalhos manuais como também tem conhecimento na área de arquitetura e administração. Além disso, é fluente em inglês e tem o nível básico de japonês. Tem interesse em trabalhar na parte de animação como também na área de jogos.Teve participação de trabalhar com UX e UI no Projeto NESS.  
-
 * **E-mail:** cfp@cesar.school
 * **Phone:**  +55 \(81\) 99812-9253
 
